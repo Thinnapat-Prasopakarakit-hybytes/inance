@@ -1,12 +1,9 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-$primary1: #0355cc;
-$primary2: #ff8a1d;
-
 .hero_area {
   position: relative;
-  background-color: #d1e3ff;
+  background-color: $background;
 }
 
 .header_section {
@@ -26,16 +23,91 @@ $primary2: #ff8a1d;
         display: flex;
         align-items: center;
         color: $white;
+        text-decoration: none;
       }
       &-icon {
         color: $accent;
         font-size: 1rem;
+        margin-right: 5px;
+      }
+      &-text {
+        color: $white;
       }
     }
   }
 
   .header_bottom {
     padding: 10px 0;
+
+    .navbar-toggler {
+      outline: none;
+      padding: 0;
+      width: 37px;
+      height: 42px;
+      transition: all 0.3s;
+      border: none;
+
+      &:focus {
+        box-shadow: none;
+      }
+      span {
+        display: block;
+        width: 35px;
+        height: 4px;
+        background-color: $black;
+        margin: 7px 0;
+        border-radius: 5px;
+        transition: all 0.3s;
+        position: relative;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background-color: $black;
+          border-radius: 5px;
+        }
+
+        &::before {
+          top: -10px;
+        }
+
+        &::after {
+          top: 10px;
+        }
+      }
+
+      &[aria-expanded="true"] {
+        transform: rotate(360deg);
+
+        span {
+          transform: rotate(45deg);
+
+          &::before,
+          &::after {
+            transform: rotate(90deg);
+            top: 0;
+          }
+        }
+      }
+
+      &[aria-expanded="false"] {
+        span {
+          &.s-1,
+          &.s-2,
+          &.s-3 {
+            transform: none;
+          }
+        }
+      }
+    }
+
+    .navbar-collapse {
+      flex-grow: 1;
+    }
   }
 }
 
@@ -47,13 +119,16 @@ $primary2: #ff8a1d;
   font-size: 24px;
 
   span {
-    color: $primary1;
+    color: $primary;
     text-transform: uppercase;
   }
 }
 
 .custom_nav-container {
-  padding: 0;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
 
   .navbar-nav {
     margin-left: auto;
@@ -66,67 +141,7 @@ $primary2: #ff8a1d;
 
         &:hover,
         &.active {
-          color: $primary1;
-        }
-      }
-    }
-  }
-
-  .navbar-toggler {
-    padding: 0;
-    width: 37px;
-    height: 42px;
-    transition: all 0.3s;
-    outline: none;
-
-    span {
-      display: block;
-      width: 35px;
-      height: 4px;
-      background-color: $black;
-      margin: 7px 0;
-      border-radius: 5px;
-      transition: all 0.3s;
-
-      &::before,
-      &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        border-radius: 5px;
-        transition: all 0.3s;
-      }
-
-      &::before {
-        top: -10px;
-      }
-
-      &::after {
-        top: 10px;
-      }
-    }
-
-    &[aria-expanded="true"] {
-      transform: rotate(360deg);
-
-      span {
-        transform: rotate(45deg);
-
-        &::before,
-        &::after {
-          transform: rotate(90deg);
-          top: 0;
-        }
-      }
-    }
-
-    &[aria-expanded="false"] {
-      span {
-        &::before,
-        &::after {
-          transform: none;
+          color: $primary;
         }
       }
     }
@@ -147,7 +162,7 @@ $primary2: #ff8a1d;
     }
 
     &:hover {
-      color: $primary2;
+      color: $primary;
     }
   }
 }
