@@ -1,0 +1,19 @@
+@use "./typography" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+::placeholder,
+button {
+  font-family: "FontAwesome", sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+ul {
+  list-style: none;
+}
