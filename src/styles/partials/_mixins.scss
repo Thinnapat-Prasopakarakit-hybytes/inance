@@ -11,3 +11,23 @@
     @content;
   }
 }
+
+@mixin secondary-font {
+  font-family: "Merriweather Sans", sans-serif;
+}
+
+@mixin hero_btn($col1, $col2, $pad1, $pad2, $bRadius) {
+  display: inline-block;
+  @include secondary-font();
+  text-transform: uppercase;
+  padding: $pad1 $pad2;
+  background-color: $col1;
+  border: 1px solid $col1;
+  border-radius: $bRadius;
+  color: $col2;
+
+  &:hover {
+    background-color: transparent;
+    color: $col1;
+  }
+}

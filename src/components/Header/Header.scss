@@ -27,7 +27,7 @@
         gap: 5px;
       }
       &-icon {
-        color: $accent;
+        color: $primary2;
         font-size: 1rem;
       }
       &-text {
@@ -159,25 +159,6 @@
           color: $primary;
         }
       }
-    }
-  }
-}
-
-.quote_btn-container {
-  display: flex;
-  align-items: center;
-
-  a {
-    color: $white;
-    margin-right: 25px;
-    text-transform: uppercase;
-
-    span {
-      margin-left: 5px;
-    }
-
-    &:hover {
-      color: $primary;
     }
   }
 }

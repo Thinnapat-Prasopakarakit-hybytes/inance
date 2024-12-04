@@ -1,0 +1,60 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.slider_section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: bottom;
+  padding-top: 45px;
+
+  @include tablet {
+    padding-top: 0;
+  }
+
+  .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .row {
+    align-items: center;
+  }
+
+  .detail-box {
+    padding-bottom: 90px;
+
+    h1 {
+      font-weight: bold;
+      margin-bottom: 25px;
+      color: $primary;
+    }
+
+    p {
+      color: #444;
+      font-size: 15px;
+    }
+
+    a {
+      @include hero_btn($primary2, $white, 10px, 45px, 5px);
+      margin-top: 15px;
+      text-decoration: none !important;
+
+      &:hover,
+      &:focus,
+      &:active {
+        text-decoration: none !important;
+      }
+    }
+  }
+
+  .img-box {
+    img {
+      width: 100%;
+    }
+  }
+}
