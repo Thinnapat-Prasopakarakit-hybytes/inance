@@ -11,3 +11,42 @@
     max-width: 1170px !important;
   }
 }
+
+@include tablet {
+  .layout_padding {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  .layout_padding-top {
+    padding-top: 90px;
+  }
+  .layout_padding-bottom {
+    padding-bottom: 45px;
+  }
+}
+
+.layout_padding {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.layout_padding2 {
+  padding: 45px 0;
+}
+
+.layout_padding2-top {
+  padding-top: 45px;
+}
+
+.layout_padding2-bottom {
+  padding-bottom: 45px;
+}
+
+.layout_padding-top {
+  padding-top: 120px;
+}
+
+.layout_padding-bottom {
+  padding-bottom: 120px;
+}

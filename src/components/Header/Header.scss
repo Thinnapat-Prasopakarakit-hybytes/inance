@@ -134,7 +134,7 @@
   font-size: 24px !important;
 
   span {
-    color: $primary;
+    color: $primary1;
     text-transform: uppercase;
   }
 }
@@ -156,7 +156,7 @@
 
         &:hover,
         &.active {
-          color: $primary;
+          color: $primary1;
         }
       }
     }

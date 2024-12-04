@@ -1,0 +1,34 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.about_section {
+  .row {
+    align-items: center;
+  }
+
+  .detail-box {
+    @include tablet {
+      margin-bottom: 45px;
+    }
+
+    h2 {
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    p {
+      margin-top: 10px;
+    }
+
+    a {
+      margin-top: 15px;
+      @include hero_btn($primary1, $white, 10px, 45px, 2px);
+    }
+  }
+
+  .img-box {
+    img {
+      width: 100%;
+    }
+  }
+}
