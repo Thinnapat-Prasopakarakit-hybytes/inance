@@ -3,6 +3,7 @@ import Feature from "../../components/Feature/Feature";
 import About from "../../components/About/About";
 import Professional from "../../components/Professional/Professional";
 import Service from "../../components/Service/Service";
+import Client from "../../components/Client/Client";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <About />
       <Professional />
       <Service />
+      <Client />
     </>
   );
 };
