@@ -1,0 +1,38 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.professional_section {
+  background-color: #d1e3ff;
+
+  .row {
+    align-items: center;
+  }
+
+  .img-box {
+    img {
+      width: 100%;
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  .detail-box {
+    h2 {
+      text-transform: uppercase;
+      font-weight: bold;
+      color: $primary1;
+      font-size: 2rem;
+    }
+
+    p {
+      margin-top: 20px;
+    }
+
+    a {
+      margin-top: 25px;
+      @include hero_btn($primary2, $white, 10px, 45px, 2px);
+    }
+  }
+}
