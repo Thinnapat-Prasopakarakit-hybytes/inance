@@ -1,0 +1,42 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.heading_container {
+  margin-bottom: 30px;
+}
+
+.contact_section {
+  input {
+    width: 100%;
+    border: none;
+    height: 50px;
+    margin-bottom: 25px;
+    padding-left: 25px;
+    background-color: $white;
+    outline: none;
+    color: $white;
+    box-shadow: 0 0 7px 0 rgba($color: $black, $alpha: 0.2);
+
+    &::placeholder {
+      color: #737272;
+    }
+
+    &.message-box {
+      height: 135px;
+    }
+  }
+
+  button {
+    border: none;
+    @include hero_btn($primary1, $white, 10px, 55px, 0);
+    margin-top: 15px;
+  }
+
+  .map_container {
+    height: 360px;
+
+    .map {
+      height: 100%;
+    }
+  }
+}

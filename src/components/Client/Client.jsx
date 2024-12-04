@@ -46,7 +46,7 @@ const Client = () => {
 
   const options = {
     loop: true,
-    margin: 20,
+    margin: 10,
     nav: true,
     navText: [
       //React Icons
@@ -65,11 +65,9 @@ const Client = () => {
     responsive: {
       0: {
         items: 1,
-        nav: true,
       },
       768: {
         items: 2,
-        nav: true,
       },
     },
     navElement: "div",

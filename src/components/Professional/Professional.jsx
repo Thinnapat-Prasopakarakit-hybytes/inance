@@ -4,16 +4,16 @@ import professionalImg from "../../assets/images/professional-img.png";
 import "./Professional.scss";
 const Professional = () => {
   return (
-    <section class="professional_section layout_padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="img-box">
+    <section className="professional_section layout_padding">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-6">
+            <div className="img-box">
               <img src={professionalImg} alt="professional-img" />
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="detail-box">
+          <div className="col-md-6">
+            <div className="detail-box">
               <h2>
                 We Provide Professional <br />
                 Home Services.
