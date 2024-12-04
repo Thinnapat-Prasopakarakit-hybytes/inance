@@ -1,5 +1,6 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import "./Contact.scss";
+import { Map } from "@vis.gl/react-google-maps";
 const Contact = () => {
   return (
     <section className="contact_section layout_padding">
@@ -29,7 +30,16 @@ const Contact = () => {
           </div>
           <div class="col-md-6">
             <div class="map_container">
-              <div class="map"></div>
+              <Map
+                style={{ borderRadius: "20px" }}
+                defaultZoom={18}
+                defaultCenter={{
+                  lat: 40.712775,
+                  lng: -74.005973,
+                }}
+                gestureHandling={"greedy"}
+                disableDefaultUI
+              ></Map>
             </div>
           </div>
         </div>
