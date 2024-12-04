@@ -1,0 +1,88 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.feature_section {
+  transform: translateY(-50%);
+  padding: 0;
+  @include desktop {
+    transform: none;
+    padding: 90px 0;
+  }
+
+  .feature_container {
+    display: flex;
+    flex-direction: row;
+
+    @include tablet {
+      flex-direction: column;
+    }
+
+    .box {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin: 0 10px;
+      padding: 45px 15px;
+      background-color: $white;
+      color: #555089;
+      transition: all 0.3s;
+      box-shadow: 0 0 15px 0 rgba($color: $black, $alpha: 0.2);
+
+      @include desktop {
+        padding: 30px 15px;
+      }
+
+      &:not(:nth-last-child(1)) {
+        margin-bottom: 0;
+        @include tablet {
+          margin-bottom: 15px;
+        }
+      }
+
+      .img-box {
+        height: 90px;
+        width: 90px;
+        @include desktop {
+          width: 75px;
+        }
+
+        svg {
+          width: 100%;
+          height: auto;
+          max-height: 100%;
+          fill: #726dae;
+          transition: all 0.3s;
+
+          path {
+            fill: #726dae;
+          }
+        }
+      }
+
+      .name {
+        margin-top: 20px;
+        text-transform: uppercase;
+        @include secondary-font();
+        margin-bottom: 0;
+      }
+
+      &:hover,
+      &.active {
+        background-color: $primary2;
+        color: $white;
+
+        .img-box {
+          svg {
+            fill: $white;
+
+            path {
+              fill: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+}

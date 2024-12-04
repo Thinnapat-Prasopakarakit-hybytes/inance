@@ -1,0 +1,13 @@
+@use "./mixins" as *;
+
+.container {
+  width: 100% !important;
+  padding-right: 15px !important;
+  padding-left: 15px !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+
+  @include lg-breakpoint {
+    max-width: 1170px !important;
+  }
+}

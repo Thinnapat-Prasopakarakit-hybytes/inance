@@ -7,18 +7,9 @@
   align-items: center;
   background-size: cover;
   background-position: bottom;
-  padding-top: 45px;
-
-  @include tablet {
-    padding-top: 0;
-  }
-
-  .container {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+  padding-top: 0;
+  @include desktop {
+    padding-top: 45px;
   }
 
   .row {
@@ -27,6 +18,9 @@
 
   .detail-box {
     padding-bottom: 90px;
+    @include tablet {
+      ppadding-bottom: 45px;
+    }
 
     h1 {
       font-weight: bold;
@@ -37,6 +31,7 @@
     p {
       color: #444;
       font-size: 15px;
+      line-height: 22.5px;
     }
 
     a {

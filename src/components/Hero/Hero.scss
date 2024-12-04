@@ -4,4 +4,8 @@
 .hero {
   position: relative;
   background-color: $background;
+
+  @include desktop {
+    height: auto;
+  }
 }

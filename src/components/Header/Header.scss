@@ -112,17 +112,17 @@
 
 .navbar-collapse {
   max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease-in-out;
+  overflow: visible;
+  display: flex;
   display: block !important;
   &.show {
     max-height: 500px;
   }
 
-  @include tablet {
+  @include desktop {
     max-height: 0;
-    overflow: visible;
-    display: flex;
+    overflow: hidden;
+    transition: max-height 0.35s ease-in-out;
   }
 }
 
