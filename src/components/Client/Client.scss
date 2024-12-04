@@ -51,12 +51,7 @@
   }
 
   .rating_star {
-    &.yellow {
-      color: #fbaf5d;
-    }
-    &.black {
-      color: $black;
-    }
+    color: #fbaf5d;
   }
 
   .owl-carousel {
@@ -73,6 +68,9 @@
         outline: none;
         margin: 0 20px;
         color: $white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
   }

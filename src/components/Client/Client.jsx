@@ -1,10 +1,12 @@
 import React from "react";
 import "./Client.scss";
-import ReactDOMServer from "react-dom/server";
-import { FaQuoteLeft, FaStar, FaArrowLeft, FaArrowRight } from "react-icons/fa";
+//import ReactDOMServer from "react-dom/server";
 import client1 from "../../assets/images/client-1.jpg";
 import client2 from "../../assets/images/client-2.jpg";
 import OwlCarousel from "react-owl-carousel";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
+import { FaQuoteLeft, FaStar } from "react-icons/fa";
 
 const Client = () => {
   const clients = [
@@ -47,8 +49,13 @@ const Client = () => {
     margin: 20,
     nav: true,
     navText: [
-      ReactDOMServer.renderToString(<FaArrowLeft />),
-      ReactDOMServer.renderToString(<FaArrowRight />),
+      //React Icons
+      // ReactDOMServer.renderToString(<FaLongArrowAltLeft />),
+      // ReactDOMServer.renderToString(<FaLongArrowAltRight />),
+
+      //Font Awesome
+      '<i class="fa fa-long-arrow-left"></i>',
+      '<i class="fa fa-long-arrow-right"></i>',
     ],
     dots: false,
     autoplay: true,
@@ -66,7 +73,7 @@ const Client = () => {
       },
     },
     navElement: "div",
-    smartSpeed: 500,
+    smartSpeed: 250,
     items: 1,
   };
 
@@ -77,7 +84,7 @@ const Client = () => {
           <h2>What Our Clients Say</h2>
         </div>
         <div className="carousel-wrap layout_padding2-top">
-          <OwlCarousel className="owl-theme" {...options}>
+          <OwlCarousel {...options}>
             {clients.map((client, index) => (
               <div key={index} className="item">
                 <div className="box">
@@ -89,19 +96,12 @@ const Client = () => {
                       <div className="client_info">
                         <h6>{client.info.name}</h6>
                         <div className="rating">
-                          {[...Array(5)].map((_, i) => (
-                            <FaStar
-                              key={i}
-                              className={
-                                i < client.info.rating
-                                  ? "rating_star yellow"
-                                  : "rating_star black"
-                              }
-                            />
+                          {[...Array(client.info.rating)].map((_, i) => (
+                            <FaStar key={i} className="rating_star" />
                           ))}
                         </div>
                       </div>
-                      <FaQuoteLeft className="quote-icon" />
+                      <FaQuoteLeft />
                     </div>
                   </div>
                   <div className="client_text">
