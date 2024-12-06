@@ -1,0 +1,103 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.info_section {
+  padding: 75px 0;
+  background-color: #0a0f43;
+  text-align: center;
+  color: $white;
+
+  h4 {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+
+  .social-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+
+    .box {
+      background-color: $white;
+      padding: 5px 15px;
+    }
+  }
+
+  a {
+    margin: 0 5px;
+    color: $primary1;
+
+    i {
+      font-size: 18px;
+    }
+
+    &:hover {
+      color: $primary2;
+    }
+  }
+}
+
+.info_items {
+  position: relative;
+
+  a {
+    position: relative;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 65px;
+    width: 75%;
+    height: 1px;
+    background-color: $white;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @include tablet {
+    &::before {
+      width: 1px;
+      height: 90%;
+      top: 25px;
+    }
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .img-box {
+      width: 80px;
+      height: 80px;
+      border-radius: 100%;
+      background-color: $white;
+      background-repeat: no-repeat;
+      background-position: center;
+      text-align: center;
+      line-height: 80px;
+      background-color: $primary1;
+      color: $white;
+
+      svg {
+        font-size: 24px;
+      }
+    }
+
+    p {
+      margin-top: 25px;
+      color: #fff;
+      margin-bottom: 0;
+      background-color: #0a0f43;
+    }
+
+    &:hover {
+      .img-box {
+        background-color: $primary2;
+      }
+    }
+  }
+}

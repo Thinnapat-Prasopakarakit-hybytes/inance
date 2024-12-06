@@ -31,7 +31,6 @@ const Contact = () => {
           <div class="col-md-6">
             <div class="map_container">
               <Map
-                style={{ borderRadius: "20px" }}
                 defaultZoom={18}
                 defaultCenter={{
                   lat: 40.712775,

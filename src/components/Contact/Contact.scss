@@ -6,6 +6,12 @@
 }
 
 .contact_section {
+  form {
+    @include tablet {
+      margin-bottom: 45px;
+    }
+  }
+
   input {
     width: 100%;
     border: none;

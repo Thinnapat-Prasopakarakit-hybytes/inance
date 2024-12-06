@@ -6,6 +6,7 @@ import Service from "../../components/Service/Service";
 import Client from "../../components/Client/Client";
 import Contact from "../../components/Contact/Contact";
 import { APIProvider } from "@vis.gl/react-google-maps";
+import Info from "../../components/Info/Info";
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
       <APIProvider apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
         <Contact />
       </APIProvider>
+      <Info />
     </>
   );
 };
