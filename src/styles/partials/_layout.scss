@@ -1,15 +1,8 @@
 @use "./mixins" as *;
 
 .container {
-  width: 100% !important;
   padding-right: 15px !important;
   padding-left: 15px !important;
-  margin-right: auto !important;
-  margin-left: auto !important;
-
-  @include lg-breakpoint {
-    max-width: 1170px !important;
-  }
 }
 
 .heading_container {
@@ -36,20 +29,6 @@
   }
 }
 
-@include tablet {
-  .layout_padding {
-    padding-top: 90px;
-    padding-bottom: 90px;
-  }
-
-  .layout_padding-top {
-    padding-top: 90px;
-  }
-  .layout_padding-bottom {
-    padding-bottom: 45px;
-  }
-}
-
 .layout_padding {
   padding-top: 120px;
   padding-bottom: 120px;
@@ -73,4 +52,29 @@
 
 .layout_padding-bottom {
   padding-bottom: 120px;
+}
+
+h1,
+h2 {
+  @include secondary-font();
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+@include tablet {
+  .layout_padding {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  .layout_padding-top {
+    padding-top: 90px;
+  }
+  .layout_padding-bottom {
+    padding-bottom: 45px;
+  }
 }

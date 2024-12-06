@@ -19,7 +19,7 @@
 }
 
 @mixin secondary-font {
-  font-family: "Merriweather Sans", sans-serif;
+  font-family: "Merriweather Sans", sans-serif !important;
 }
 
 @mixin hero_btn($col1, $col2, $pad1, $pad2, $bRadius) {

@@ -4,7 +4,7 @@ import AboutComponent from "../../components/AboutComponent/AboutComponent";
 import Professional from "../../components/Professional/Professional";
 import ServiceComponent from "../../components/ServiceComponent/ServiceComponent";
 import Client from "../../components/Client/Client";
-import Contact from "../../components/Contact/Contact";
+import ContactComponent from "../../components/ContactComponent/ContactComponent";
 import { APIProvider } from "@vis.gl/react-google-maps";
 
 const Home = () => {
@@ -16,7 +16,7 @@ const Home = () => {
       <ServiceComponent />
       <Client />
       <APIProvider apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
-        <Contact />
+        <ContactComponent />
       </APIProvider>
     </>
   );

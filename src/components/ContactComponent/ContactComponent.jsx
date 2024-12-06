@@ -1,7 +1,7 @@
 import React from "react";
-import "./Contact.scss";
+import "./ContactComponent.scss";
 import { Map } from "@vis.gl/react-google-maps";
-const Contact = () => {
+const ContactComponent = () => {
   return (
     <section className="contact_section layout_padding">
       <div className="container">
@@ -47,4 +47,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactComponent;
