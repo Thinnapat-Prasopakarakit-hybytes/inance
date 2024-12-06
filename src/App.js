@@ -6,6 +6,8 @@ import About from "./pages/About/About";
 import Service from "./pages/Service/Service";
 import Contact from "./pages/Contact/Contact";
 import { Hero } from "./components/Hero/Hero";
+import Info from "./components/Info/Info";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path="/service" element={<Service />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Info />
+      <Footer />
     </BrowserRouter>
   );
 }
