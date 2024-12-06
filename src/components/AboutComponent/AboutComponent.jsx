@@ -1,14 +1,14 @@
 import React from "react";
-import "./About.scss";
+import "./AboutComponent.scss";
 import { Link } from "react-router-dom";
 import aboutImg from "../../assets/images/about-img.jpg";
-const About = () => {
+const AboutComponent = ({ layout }) => {
   return (
-    <section class="about_section layout_padding-bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-5 col-md-6">
-            <div class="detail-box">
+    <section className={`about_section ${layout}`}>
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-5 col-md-6">
+            <div className="detail-box">
               <h2>About us</h2>
               <p>
                 There are many variations of passages of Lorem Ipsum available,
@@ -21,8 +21,8 @@ const About = () => {
               <Link to="/"> Read More </Link>
             </div>
           </div>
-          <div class="col-lg-7 col-md-6">
-            <div class="img-box">
+          <div className="col-lg-7 col-md-6">
+            <div className="img-box">
               <img src={aboutImg} alt="about-img" />
             </div>
           </div>
@@ -32,4 +32,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutComponent;

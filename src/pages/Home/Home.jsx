@@ -1,6 +1,6 @@
 import React from "react";
 import Feature from "../../components/Feature/Feature";
-import About from "../../components/About/About";
+import AboutComponent from "../../components/AboutComponent/AboutComponent";
 import Professional from "../../components/Professional/Professional";
 import Service from "../../components/Service/Service";
 import Client from "../../components/Client/Client";
@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <>
       <Feature />
-      <About />
+      <AboutComponent layout={"layout_padding-bottom"} />
       <Professional />
       <Service />
       <Client />
