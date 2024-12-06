@@ -7,6 +7,7 @@ import Client from "../../components/Client/Client";
 import Contact from "../../components/Contact/Contact";
 import { APIProvider } from "@vis.gl/react-google-maps";
 import Info from "../../components/Info/Info";
+import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
         <Contact />
       </APIProvider>
       <Info />
+      <Footer />
     </>
   );
 };
