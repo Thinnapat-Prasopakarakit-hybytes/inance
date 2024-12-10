@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import aboutImg from "../../assets/images/about-img.jpg";
 const AboutComponent = ({ layout }) => {
   return (
-    <section className={`about_section ${layout}`}>
+    <section className={`about_section ${layout}`} aria-label="About Section">
       <div className="container">
         <div className="row">
           <div className="col-lg-5 col-md-6">
