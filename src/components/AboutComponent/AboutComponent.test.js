@@ -3,41 +3,43 @@ import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import AboutComponent from "./AboutComponent";
 
-const renderWithRouter = (component) => {
-  return render(<BrowserRouter>{component}</BrowserRouter>);
+const renderAboutComponent = () => {
+  return render(
+    <BrowserRouter>
+      <AboutComponent layout="layout_padding" />
+    </BrowserRouter>
+  );
 };
 
 describe("AboutComponent", () => {
-  it("shouldrenders with correct layout class", () => {
-    renderWithRouter(<AboutComponent layout="layout_padding" />);
+  it("should renders with correct layout class", () => {
+    renderAboutComponent();
     const section = screen.getByRole("region", { name: "About Section" });
     expect(section).toHaveClass("about_section layout_padding");
   });
 
   it("should renders about content", () => {
-    renderWithRouter(<AboutComponent layout="layout_padding" />);
+    renderAboutComponent();
     expect(screen.getByText("About us")).toBeInTheDocument();
     expect(screen.getByText(/There are many variations/)).toBeInTheDocument();
     expect(screen.getByText("Read More")).toBeInTheDocument();
   });
 
   it("should renders image with correct attributes", () => {
-    renderWithRouter(<AboutComponent layout="layout_padding" />);
+    renderAboutComponent();
     const image = screen.getByAltText("about-img");
     expect(image).toBeInTheDocument();
     expect(image).toHaveAttribute("src", "mock-image-path");
   });
 
   it("should renders the 'Read More' link to home page", () => {
-    renderWithRouter(<AboutComponent layout="layout_padding" />);
+    renderAboutComponent();
     const link = screen.getByText("Read More");
     expect(link).toHaveAttribute("href", "/");
   });
 
   it("should match snapshot", () => {
-    const { asFragment } = renderWithRouter(
-      <AboutComponent layout="layout_padding" />
-    );
+    const { asFragment } = renderAboutComponent();
     expect(asFragment()).toMatchSnapshot();
   });
 });
