@@ -62,7 +62,10 @@ const Header = () => {
               <span className="navbar-toggler-icon"></span>
             </button>
 
-            <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}>
+            <div
+              className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}
+              data-testid="navbar-collapse"
+            >
               <ul className="navbar-nav">
                 <li className="nav-item">
                   <NavLink to="/" className="nav-link" activeClassName="active">
