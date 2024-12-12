@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Component should match snapshot 1`] = `
+<DocumentFragment>
+  <footer
+    class="footer_section"
+  >
+    <div
+      class="container"
+    >
+      <p>
+        © 
+        <span>
+          2024
+        </span>
+         All Rights Reserved By
+        <a
+          href="https://html.design/"
+        >
+          Free Html Templates
+        </a>
+      </p>
+    </div>
+  </footer>
+</DocumentFragment>
+`;
