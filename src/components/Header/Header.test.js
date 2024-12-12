@@ -46,6 +46,11 @@ describe("Header Component", () => {
     });
     expect(toggleButton).toBeInTheDocument();
   });
+
+  it("should match snapshot", () => {
+    const { asFragment } = renderHeaderComponent();
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
 
 describe("Navigation Toggle Functionality", () => {

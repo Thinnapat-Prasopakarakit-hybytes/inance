@@ -4,7 +4,10 @@ import professionalImg from "../../assets/images/professional-img.png";
 import "./Professional.scss";
 const Professional = () => {
   return (
-    <section className="professional_section layout_padding">
+    <section
+      className="professional_section layout_padding"
+      aria-label="Professional Services"
+    >
       <div className="container">
         <div className="row">
           <div className="col-md-6">
