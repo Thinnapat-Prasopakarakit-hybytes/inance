@@ -9,22 +9,22 @@ const Feature = () => {
       <div className="container">
         <div className="feature_container">
           <div className="box">
-            <div className="img-box">
+            <div className="img-box" data-testid="tools-icon">
               <Tools />
             </div>
             <h5 className="name">Repair</h5>
           </div>
-          <div className="box active">
-            <div class="img-box">
+          <div className="box active" data-testid="active">
+            <div className="img-box" data-testid="construction-icon">
               <Construction />
             </div>
             <h5 className="name">Improve</h5>
           </div>
           <div className="box">
-            <div class="img-box">
+            <div className="img-box" data-testid="maintenance-icon">
               <Maintenance />
             </div>
-            <h5 class="name">Maintain</h5>
+            <h5 className="name">Maintain</h5>
           </div>
         </div>
       </div>
