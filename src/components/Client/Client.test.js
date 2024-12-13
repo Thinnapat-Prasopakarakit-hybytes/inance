@@ -1,22 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import Client from "./Client";
-import "@testing-library/jest-dom";
 import { BrowserRouter } from "react-router-dom";
-
-jest.mock("react-icons/fa", () => ({
-  FaQuoteLeft: () => <div data-testid="quote-icon" />,
-  FaStar: () => <div data-testid="star-icon" />,
-}));
-
-jest.mock("react-owl-carousel", () => {
-  return function DummyOwlCarousel({ children }) {
-    return <div data-testid="owl-carousel">{children}</div>;
-  };
-});
-
-jest.mock("../../assets/images/client-1.jpg", () => "mock-client-1");
-jest.mock("../../assets/images/client-2.jpg", () => "mock-client-2");
 
 const renderClient = () => {
   return render(

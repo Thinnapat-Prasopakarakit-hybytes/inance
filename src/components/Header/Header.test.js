@@ -1,13 +1,7 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import "@testing-library/jest-dom";
 import Header from "./Header";
-
-jest.mock("react-icons/fa", () => ({
-  FaPhoneAlt: () => <div data-testid="phone-icon" />,
-  FaEnvelope: () => <div data-testid="email-icon" />,
-}));
 
 const renderHeaderComponent = () => {
   return render(
@@ -28,7 +22,7 @@ describe("Header Component", () => {
     expect(screen.getByText("Call : +01 123455678990")).toBeInTheDocument();
     expect(screen.getByText("Email : demo@gmail.com")).toBeInTheDocument();
     expect(screen.getByTestId("phone-icon")).toBeInTheDocument();
-    expect(screen.getByTestId("email-icon")).toBeInTheDocument();
+    expect(screen.getByTestId("envelope-icon")).toBeInTheDocument();
   });
 
   it("should render navigation links", () => {

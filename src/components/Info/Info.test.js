@@ -1,21 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import Info from "./Info";
-import "@testing-library/jest-dom";
 import { BrowserRouter } from "react-router-dom";
-
-jest.mock("react-icons/fa", () => ({
-  FaMapMarkerAlt: () => <div data-testid="map-marker-icon" />,
-  FaPhoneAlt: () => <div data-testid="phone-icon" />,
-  FaEnvelope: () => <div data-testid="envelope-icon" />,
-  FaTwitter: () => <div data-testid="twitter-icon" />,
-  FaInstagram: () => <div data-testid="instagram-icon" />,
-}));
-
-jest.mock("react-icons/tfi", () => ({
-  TfiFacebook: () => <div data-testid="facebook-icon" />,
-  TfiYoutube: () => <div data-testid="youtube-icon" />,
-}));
 
 const renderInfo = () => {
   return render(

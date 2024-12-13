@@ -2,19 +2,6 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import Feature from "./Feature";
 import { BrowserRouter } from "react-router-dom";
-import "@testing-library/jest-dom";
-
-jest.mock("../../assets/images/tools.svg", () => ({
-  ReactComponent: () => <svg />,
-}));
-
-jest.mock("../../assets/images/construction.svg", () => ({
-  ReactComponent: () => <svg />,
-}));
-
-jest.mock("../../assets/images/maintenance.svg", () => ({
-  ReactComponent: () => <svg />,
-}));
 
 const renderFeatureComponent = () => {
   return render(

@@ -2,9 +2,6 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import Slider from "./Slider";
 import { BrowserRouter } from "react-router-dom";
-import "@testing-library/jest-dom";
-
-jest.mock("../../assets/images/slider-img.png", () => "mock-slider-img");
 
 const renderSlider = () => {
   return render(

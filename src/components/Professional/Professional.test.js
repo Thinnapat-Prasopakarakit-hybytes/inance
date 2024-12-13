@@ -3,11 +3,6 @@ import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import Professional from "./Professional";
 
-jest.mock(
-  "../../assets/images/professional-img.png",
-  () => "mock-professional-image"
-);
-
 const renderProfessionalComponent = () => {
   return render(
     <BrowserRouter>

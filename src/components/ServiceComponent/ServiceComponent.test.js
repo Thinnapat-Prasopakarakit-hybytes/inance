@@ -1,12 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import ServiceComponent from "./ServiceComponent";
-import "@testing-library/jest-dom";
 import { BrowserRouter } from "react-router-dom";
-
-jest.mock("../../assets/images/s1.png", () => "mock-s1-image");
-jest.mock("../../assets/images/s2.png", () => "mock-s2-image");
-jest.mock("../../assets/images/s3.png", () => "mock-s3-image");
 
 const renderServiceComponent = () => {
   return render(

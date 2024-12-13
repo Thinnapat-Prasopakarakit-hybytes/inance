@@ -2,8 +2,6 @@ import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import AboutComponent from "./AboutComponent";
 
-jest.mock("../../assets/images/about-img.jpg", () => "mock-image-path");
-
 const renderAboutComponent = () => {
   return render(
     <BrowserRouter>
@@ -30,7 +28,7 @@ describe("AboutComponent", () => {
     renderAboutComponent();
     const image = screen.getByAltText("about-img");
     expect(image).toBeInTheDocument();
-    expect(image).toHaveAttribute("src", "mock-image-path");
+    expect(image).toHaveAttribute("src", "mock-about-img");
   });
 
   it("should renders the 'Read More' link to home page", () => {

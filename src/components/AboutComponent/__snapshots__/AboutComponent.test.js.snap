@@ -39,7 +39,7 @@ exports[`AboutComponent should match snapshot 1`] = `
           >
             <img
               alt="about-img"
-              src="mock-image-path"
+              src="mock-about-img"
             />
           </div>
         </div>

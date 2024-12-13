@@ -34,7 +34,7 @@ exports[`Header Component should match snapshot 1`] = `
             href="/"
           >
             <div
-              data-testid="email-icon"
+              data-testid="envelope-icon"
             />
             <span
               class="contact_nav-text"
