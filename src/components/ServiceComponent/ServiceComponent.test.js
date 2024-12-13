@@ -42,9 +42,9 @@ describe("ServiceComponent", () => {
       { src: "mock-s3-image", alt: "Plumbing" },
     ];
 
-    serviceImages.forEach((img, index) => {
-      expect(img).toHaveAttribute("src", expectedImages[index].src);
-      expect(img).toHaveAttribute("alt", expectedImages[index].alt);
+    serviceImages.forEach((img, idx) => {
+      expect(img).toHaveAttribute("src", expectedImages[idx].src);
+      expect(img).toHaveAttribute("alt", expectedImages[idx].alt);
     });
   });
 
