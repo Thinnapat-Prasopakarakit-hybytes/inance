@@ -35,7 +35,7 @@ exports[`Client Component should match snapshot 1`] = `
                 >
                   <img
                     alt="Jorch morik"
-                    src="mock-image-path"
+                    src="mock-client-1"
                   />
                 </div>
                 <div
@@ -95,7 +95,7 @@ exports[`Client Component should match snapshot 1`] = `
                 >
                   <img
                     alt="Jorch morik"
-                    src="mock-image-path"
+                    src="mock-client-2"
                   />
                 </div>
                 <div
@@ -155,7 +155,7 @@ exports[`Client Component should match snapshot 1`] = `
                 >
                   <img
                     alt="Jorch morik"
-                    src="mock-image-path"
+                    src="mock-client-1"
                   />
                 </div>
                 <div
@@ -215,7 +215,7 @@ exports[`Client Component should match snapshot 1`] = `
                 >
                   <img
                     alt="Jorch morik"
-                    src="mock-image-path"
+                    src="mock-client-2"
                   />
                 </div>
                 <div

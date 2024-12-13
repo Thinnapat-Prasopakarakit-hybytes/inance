@@ -15,6 +15,9 @@ jest.mock("react-owl-carousel", () => {
   };
 });
 
+jest.mock("../../assets/images/client-1.jpg", () => "mock-client-1");
+jest.mock("../../assets/images/client-2.jpg", () => "mock-client-2");
+
 const renderClient = () => {
   return render(
     <BrowserRouter>
@@ -35,6 +38,18 @@ describe("Client Component", () => {
     expect(clientNames).toHaveLength(4);
   });
 
+  it("should render client images", () => {
+    renderClient();
+    const images = screen.getAllByRole("img");
+    expect(images).toHaveLength(4);
+
+    images.forEach((img, index) => {
+      const expectedSrc = index % 2 === 0 ? "mock-client-1" : "mock-client-2";
+      expect(img).toHaveAttribute("src", expectedSrc);
+      expect(img).toHaveAttribute("alt", "Jorch morik");
+    });
+  });
+
   it("should render rating stars for each client", () => {
     renderClient();
     const stars = screen.getAllByTestId("star-icon");
@@ -51,6 +66,11 @@ describe("Client Component", () => {
     renderClient();
     const testimonialText = screen.getAllByText(/chunks as necessary/i);
     expect(testimonialText).toHaveLength(4);
+  });
+
+  it("should render carousel wrapper", () => {
+    renderClient();
+    expect(screen.getByTestId("owl-carousel")).toBeInTheDocument();
   });
 
   it("should match snapshot", () => {
