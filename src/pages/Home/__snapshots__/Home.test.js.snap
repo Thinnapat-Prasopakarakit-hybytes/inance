@@ -2,593 +2,601 @@
 
 exports[`Home Page should match snapshot 1`] = `
 <DocumentFragment>
-  <section
-    class="feature_section"
+  <div
+    data-testid="mock-api-provider"
   >
-    <div
-      class="container"
+    <section
+      class="feature_section"
     >
       <div
-        class="feature_container"
+        class="container"
       >
         <div
-          class="box"
+          class="feature_container"
         >
           <div
-            class="img-box"
-            data-testid="tools-icon"
+            class="box"
           >
-            <svg />
+            <div
+              class="img-box"
+              data-testid="tools-icon"
+            >
+              <svg />
+            </div>
+            <h5
+              class="name"
+            >
+              Repair
+            </h5>
           </div>
-          <h5
-            class="name"
-          >
-            Repair
-          </h5>
-        </div>
-        <div
-          class="box active"
-          data-testid="active"
-        >
           <div
-            class="img-box"
-            data-testid="construction-icon"
+            class="box active"
+            data-testid="active"
           >
-            <svg />
+            <div
+              class="img-box"
+              data-testid="construction-icon"
+            >
+              <svg />
+            </div>
+            <h5
+              class="name"
+            >
+              Improve
+            </h5>
           </div>
-          <h5
-            class="name"
-          >
-            Improve
-          </h5>
-        </div>
-        <div
-          class="box"
-        >
           <div
-            class="img-box"
-            data-testid="maintenance-icon"
+            class="box"
           >
-            <svg />
+            <div
+              class="img-box"
+              data-testid="maintenance-icon"
+            >
+              <svg />
+            </div>
+            <h5
+              class="name"
+            >
+              Maintain
+            </h5>
           </div>
-          <h5
-            class="name"
-          >
-            Maintain
-          </h5>
         </div>
       </div>
-    </div>
-  </section>
-  <section
-    aria-label="About Section"
-    class="about_section layout_padding-bottom"
-  >
-    <div
-      class="container"
+    </section>
+    <section
+      aria-label="About Section"
+      class="about_section layout_padding-bottom"
     >
       <div
-        class="row"
+        class="container"
       >
         <div
-          class="col-lg-5 col-md-6"
+          class="row"
         >
           <div
-            class="detail-box"
+            class="col-lg-5 col-md-6"
+          >
+            <div
+              class="detail-box"
+            >
+              <h2>
+                About us
+              </h2>
+              <p>
+                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomisedThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised
+              </p>
+              <a
+                href="/"
+              >
+                 Read More 
+              </a>
+            </div>
+          </div>
+          <div
+            class="col-lg-7 col-md-6"
+          >
+            <div
+              class="img-box"
+            >
+              <img
+                alt="about-img"
+                src="mock-about-img"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      aria-label="Professional Services"
+      class="professional_section layout_padding"
+    >
+      <div
+        class="container"
+      >
+        <div
+          class="row"
+        >
+          <div
+            class="col-md-6"
+          >
+            <div
+              class="img-box"
+            >
+              <img
+                alt="professional-img"
+                src="mock-professional-image"
+              />
+            </div>
+          </div>
+          <div
+            class="col-md-6"
+          >
+            <div
+              class="detail-box"
+            >
+              <h2>
+                We Provide Professional 
+                <br />
+                Home Services.
+              </h2>
+              <p>
+                randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All randomised words which don't look even slightly
+              </p>
+              <a
+                href="/"
+              >
+                 Read More 
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="service_section layout_padding"
+    >
+      <div
+        class="container"
+      >
+        <div
+          class="heading_container heading_center"
+        >
+          <h2>
+            Our Services
+          </h2>
+        </div>
+        <div
+          class="row"
+        >
+          <div
+            class="col-sm-6 col-md-4 mx-auto px-3"
+          >
+            <div
+              class="box"
+            >
+              <div
+                class="img-box"
+              >
+                <img
+                  alt="Maintenance"
+                  src="mock-s1-image"
+                />
+              </div>
+              <div
+                class="detail-box"
+              >
+                <h5>
+                  Maintenance
+                </h5>
+                <p>
+                  when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-sm-6 col-md-4 mx-auto px-3"
+          >
+            <div
+              class="box"
+            >
+              <div
+                class="img-box"
+              >
+                <img
+                  alt="Electrical"
+                  src="mock-s2-image"
+                />
+              </div>
+              <div
+                class="detail-box"
+              >
+                <h5>
+                  Electrical
+                </h5>
+                <p>
+                  when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-sm-6 col-md-4 mx-auto px-3"
+          >
+            <div
+              class="box"
+            >
+              <div
+                class="img-box"
+              >
+                <img
+                  alt="Plumbing"
+                  src="mock-s3-image"
+                />
+              </div>
+              <div
+                class="detail-box"
+              >
+                <h5>
+                  Plumbing
+                </h5>
+                <p>
+                  when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="btn-box"
+        >
+          <a
+            href="/"
+          >
+             View More 
+          </a>
+        </div>
+      </div>
+    </section>
+    <section
+      class="client_section"
+    >
+      <div
+        class="container"
+      >
+        <div
+          class="heading_container heading_center"
+        >
+          <h2>
+            What Our Clients Say
+          </h2>
+        </div>
+        <div
+          class="carousel-wrap layout_padding2-top"
+        >
+          <div
+            data-testid="owl-carousel"
+          >
+            <div
+              class="item"
+            >
+              <div
+                class="box"
+              >
+                <div
+                  class="client_id"
+                >
+                  <div
+                    class="img-box"
+                  >
+                    <img
+                      alt="Jorch morik"
+                      src="mock-client-1"
+                    />
+                  </div>
+                  <div
+                    class="client_detail"
+                  >
+                    <div
+                      class="client_info"
+                    >
+                      <h6>
+                        Jorch morik
+                      </h6>
+                      <div
+                        class="rating"
+                      >
+                        <div
+                          data-testid="star-icon"
+                        />
+                        <div
+                          data-testid="star-icon"
+                        />
+                        <div
+                          data-testid="star-icon"
+                        />
+                        <div
+                          data-testid="star-icon"
+                        />
+                        <div
+                          data-testid="star-icon"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      data-testid="quote-icon"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="client_text"
+                >
+                  <p>
+                    chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="item"
+            >
+              <div
+                class="box"
+              >
+                <div
+                  class="client_id"
+                >
+                  <div
+                    class="img-box"
+                  >
+                    <img
+                      alt="Jorch morik"
+                      src="mock-client-2"
+                    />
+                  </div>
+                  <div
+                    class="client_detail"
+                  >
+                    <div
+                      class="client_info"
+                    >
+                      <h6>
+                        Jorch morik
+                      </h6>
+                      <div
+                        class="rating"
+                      >
+                        <div
+                          data-testid="star-icon"
+                        />
+                        <div
+                          data-testid="star-icon"
+                        />
+                        <div
+                          data-testid="star-icon"
+                        />
+                        <div
+                          data-testid="star-icon"
+                        />
+                        <div
+                          data-testid="star-icon"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      data-testid="quote-icon"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="client_text"
+                >
+                  <p>
+                    chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="item"
+            >
+              <div
+                class="box"
+              >
+                <div
+                  class="client_id"
+                >
+                  <div
+                    class="img-box"
+                  >
+                    <img
+                      alt="Jorch morik"
+                      src="mock-client-1"
+                    />
+                  </div>
+                  <div
+                    class="client_detail"
+                  >
+                    <div
+                      class="client_info"
+                    >
+                      <h6>
+                        Jorch morik
+                      </h6>
+                      <div
+                        class="rating"
+                      >
+                        <div
+                          data-testid="star-icon"
+                        />
+                        <div
+                          data-testid="star-icon"
+                        />
+                        <div
+                          data-testid="star-icon"
+                        />
+                        <div
+                          data-testid="star-icon"
+                        />
+                        <div
+                          data-testid="star-icon"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      data-testid="quote-icon"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="client_text"
+                >
+                  <p>
+                    chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="item"
+            >
+              <div
+                class="box"
+              >
+                <div
+                  class="client_id"
+                >
+                  <div
+                    class="img-box"
+                  >
+                    <img
+                      alt="Jorch morik"
+                      src="mock-client-2"
+                    />
+                  </div>
+                  <div
+                    class="client_detail"
+                  >
+                    <div
+                      class="client_info"
+                    >
+                      <h6>
+                        Jorch morik
+                      </h6>
+                      <div
+                        class="rating"
+                      >
+                        <div
+                          data-testid="star-icon"
+                        />
+                        <div
+                          data-testid="star-icon"
+                        />
+                        <div
+                          data-testid="star-icon"
+                        />
+                        <div
+                          data-testid="star-icon"
+                        />
+                        <div
+                          data-testid="star-icon"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      data-testid="quote-icon"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="client_text"
+                >
+                  <p>
+                    chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div
+      data-testid="mock-api-provider"
+    >
+      <section
+        class="contact_section layout_padding"
+      >
+        <div
+          class="container"
+        >
+          <div
+            class="heading_container"
           >
             <h2>
-              About us
+              Contact Us
             </h2>
-            <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomisedThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised
-            </p>
-            <a
-              href="/"
-            >
-               Read More 
-            </a>
           </div>
-        </div>
-        <div
-          class="col-lg-7 col-md-6"
-        >
           <div
-            class="img-box"
+            class="row"
           >
-            <img
-              alt="about-img"
-              src="mock-about-img"
-            />
+            <div
+              class="col-md-6"
+            >
+              <form
+                action=""
+              >
+                <div>
+                  <input
+                    placeholder="Name"
+                    type="text"
+                  />
+                </div>
+                <div>
+                  <input
+                    placeholder="Phone Number"
+                    type="text"
+                  />
+                </div>
+                <div>
+                  <input
+                    placeholder="Email"
+                    type="email"
+                  />
+                </div>
+                <div>
+                  <input
+                    class="message-box"
+                    placeholder="Message"
+                    type="text"
+                  />
+                </div>
+                <div
+                  class="d-flex"
+                >
+                  <button>
+                    SEND
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div
+              class="col-md-6"
+            >
+              <div
+                class="map_container"
+              >
+                <div
+                  data-props="{\\"defaultZoom\\":18,\\"defaultCenter\\":{\\"lat\\":40.712775,\\"lng\\":-74.005973},\\"gestureHandling\\":\\"greedy\\",\\"disableDefaultUI\\":true}"
+                  data-testid="mock-map"
+                />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
-  </section>
-  <section
-    aria-label="Professional Services"
-    class="professional_section layout_padding"
-  >
-    <div
-      class="container"
-    >
-      <div
-        class="row"
-      >
-        <div
-          class="col-md-6"
-        >
-          <div
-            class="img-box"
-          >
-            <img
-              alt="professional-img"
-              src="mock-professional-image"
-            />
-          </div>
-        </div>
-        <div
-          class="col-md-6"
-        >
-          <div
-            class="detail-box"
-          >
-            <h2>
-              We Provide Professional 
-              <br />
-              Home Services.
-            </h2>
-            <p>
-              randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All randomised words which don't look even slightly
-            </p>
-            <a
-              href="/"
-            >
-               Read More 
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section
-    class="service_section layout_padding"
-  >
-    <div
-      class="container"
-    >
-      <div
-        class="heading_container heading_center"
-      >
-        <h2>
-          Our Services
-        </h2>
-      </div>
-      <div
-        class="row"
-      >
-        <div
-          class="col-sm-6 col-md-4 mx-auto px-3"
-        >
-          <div
-            class="box"
-          >
-            <div
-              class="img-box"
-            >
-              <img
-                alt="Maintenance"
-                src="mock-s1-image"
-              />
-            </div>
-            <div
-              class="detail-box"
-            >
-              <h5>
-                Maintenance
-              </h5>
-              <p>
-                when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-              </p>
-            </div>
-          </div>
-        </div>
-        <div
-          class="col-sm-6 col-md-4 mx-auto px-3"
-        >
-          <div
-            class="box"
-          >
-            <div
-              class="img-box"
-            >
-              <img
-                alt="Electrical"
-                src="mock-s2-image"
-              />
-            </div>
-            <div
-              class="detail-box"
-            >
-              <h5>
-                Electrical
-              </h5>
-              <p>
-                when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-              </p>
-            </div>
-          </div>
-        </div>
-        <div
-          class="col-sm-6 col-md-4 mx-auto px-3"
-        >
-          <div
-            class="box"
-          >
-            <div
-              class="img-box"
-            >
-              <img
-                alt="Plumbing"
-                src="mock-s3-image"
-              />
-            </div>
-            <div
-              class="detail-box"
-            >
-              <h5>
-                Plumbing
-              </h5>
-              <p>
-                when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="btn-box"
-      >
-        <a
-          href="/"
-        >
-           View More 
-        </a>
-      </div>
-    </div>
-  </section>
-  <section
-    class="client_section"
-  >
-    <div
-      class="container"
-    >
-      <div
-        class="heading_container heading_center"
-      >
-        <h2>
-          What Our Clients Say
-        </h2>
-      </div>
-      <div
-        class="carousel-wrap layout_padding2-top"
-      >
-        <div
-          data-testid="owl-carousel"
-        >
-          <div
-            class="item"
-          >
-            <div
-              class="box"
-            >
-              <div
-                class="client_id"
-              >
-                <div
-                  class="img-box"
-                >
-                  <img
-                    alt="Jorch morik"
-                    src="mock-client-1"
-                  />
-                </div>
-                <div
-                  class="client_detail"
-                >
-                  <div
-                    class="client_info"
-                  >
-                    <h6>
-                      Jorch morik
-                    </h6>
-                    <div
-                      class="rating"
-                    >
-                      <div
-                        data-testid="star-icon"
-                      />
-                      <div
-                        data-testid="star-icon"
-                      />
-                      <div
-                        data-testid="star-icon"
-                      />
-                      <div
-                        data-testid="star-icon"
-                      />
-                      <div
-                        data-testid="star-icon"
-                      />
-                    </div>
-                  </div>
-                  <div
-                    data-testid="quote-icon"
-                  />
-                </div>
-              </div>
-              <div
-                class="client_text"
-              >
-                <p>
-                  chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum
-                </p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="item"
-          >
-            <div
-              class="box"
-            >
-              <div
-                class="client_id"
-              >
-                <div
-                  class="img-box"
-                >
-                  <img
-                    alt="Jorch morik"
-                    src="mock-client-2"
-                  />
-                </div>
-                <div
-                  class="client_detail"
-                >
-                  <div
-                    class="client_info"
-                  >
-                    <h6>
-                      Jorch morik
-                    </h6>
-                    <div
-                      class="rating"
-                    >
-                      <div
-                        data-testid="star-icon"
-                      />
-                      <div
-                        data-testid="star-icon"
-                      />
-                      <div
-                        data-testid="star-icon"
-                      />
-                      <div
-                        data-testid="star-icon"
-                      />
-                      <div
-                        data-testid="star-icon"
-                      />
-                    </div>
-                  </div>
-                  <div
-                    data-testid="quote-icon"
-                  />
-                </div>
-              </div>
-              <div
-                class="client_text"
-              >
-                <p>
-                  chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum
-                </p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="item"
-          >
-            <div
-              class="box"
-            >
-              <div
-                class="client_id"
-              >
-                <div
-                  class="img-box"
-                >
-                  <img
-                    alt="Jorch morik"
-                    src="mock-client-1"
-                  />
-                </div>
-                <div
-                  class="client_detail"
-                >
-                  <div
-                    class="client_info"
-                  >
-                    <h6>
-                      Jorch morik
-                    </h6>
-                    <div
-                      class="rating"
-                    >
-                      <div
-                        data-testid="star-icon"
-                      />
-                      <div
-                        data-testid="star-icon"
-                      />
-                      <div
-                        data-testid="star-icon"
-                      />
-                      <div
-                        data-testid="star-icon"
-                      />
-                      <div
-                        data-testid="star-icon"
-                      />
-                    </div>
-                  </div>
-                  <div
-                    data-testid="quote-icon"
-                  />
-                </div>
-              </div>
-              <div
-                class="client_text"
-              >
-                <p>
-                  chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum
-                </p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="item"
-          >
-            <div
-              class="box"
-            >
-              <div
-                class="client_id"
-              >
-                <div
-                  class="img-box"
-                >
-                  <img
-                    alt="Jorch morik"
-                    src="mock-client-2"
-                  />
-                </div>
-                <div
-                  class="client_detail"
-                >
-                  <div
-                    class="client_info"
-                  >
-                    <h6>
-                      Jorch morik
-                    </h6>
-                    <div
-                      class="rating"
-                    >
-                      <div
-                        data-testid="star-icon"
-                      />
-                      <div
-                        data-testid="star-icon"
-                      />
-                      <div
-                        data-testid="star-icon"
-                      />
-                      <div
-                        data-testid="star-icon"
-                      />
-                      <div
-                        data-testid="star-icon"
-                      />
-                    </div>
-                  </div>
-                  <div
-                    data-testid="quote-icon"
-                  />
-                </div>
-              </div>
-              <div
-                class="client_text"
-              >
-                <p>
-                  chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section
-    class="contact_section layout_padding"
-  >
-    <div
-      class="container"
-    >
-      <div
-        class="heading_container"
-      >
-        <h2>
-          Contact Us
-        </h2>
-      </div>
-      <div
-        class="row"
-      >
-        <div
-          class="col-md-6"
-        >
-          <form
-            action=""
-          >
-            <div>
-              <input
-                placeholder="Name"
-                type="text"
-              />
-            </div>
-            <div>
-              <input
-                placeholder="Phone Number"
-                type="text"
-              />
-            </div>
-            <div>
-              <input
-                placeholder="Email"
-                type="email"
-              />
-            </div>
-            <div>
-              <input
-                class="message-box"
-                placeholder="Message"
-                type="text"
-              />
-            </div>
-            <div
-              class="d-flex"
-            >
-              <button>
-                SEND
-              </button>
-            </div>
-          </form>
-        </div>
-        <div
-          class="col-md-6"
-        >
-          <div
-            class="map_container"
-          >
-            <div
-              data-testid="map"
-              style="width: 100%; height: 100%; position: relative; z-index: 0;"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
 </DocumentFragment>
 `;
