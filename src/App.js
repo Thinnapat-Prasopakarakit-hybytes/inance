@@ -8,20 +8,23 @@ import Contact from "./pages/Contact/Contact";
 import { Hero } from "./components/Hero/Hero";
 import Info from "./components/Info/Info";
 import Footer from "./components/Footer/Footer";
+import LanguageProvider from "./i18n/LanguageProvider";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Hero />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/service" element={<Service />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-      <Info />
-      <Footer />
-    </BrowserRouter>
+    <LanguageProvider>
+      <BrowserRouter>
+        <Hero />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/service" element={<Service />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <Info />
+        <Footer />
+      </BrowserRouter>
+    </LanguageProvider>
   );
 }
 

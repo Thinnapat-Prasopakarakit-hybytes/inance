@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import "./Header.scss";
+import { useIntl } from "react-intl";
+import { LanguageContext } from "../../i18n/LanguageProvider";
 
 const Header = () => {
+  const { messages, locale } = useIntl();
+  const { handleLanguageChange } = useContext(LanguageContext);
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleNavbar = () => {
@@ -17,11 +21,30 @@ const Header = () => {
           <div className="contact_nav">
             <NavLink to="/">
               <FaPhoneAlt className="contact_nav-icon" />
-              <span className="contact_nav-text">Call : +01 123455678990</span>
+              <span className="contact_nav-text keep-ltr">
+                {messages.header.phone}
+              </span>
             </NavLink>
+
+            <div className="language">
+              <span
+                className={locale === "en" ? "active" : "toggle"}
+                onClick={() => handleLanguageChange("en")}
+              >
+                English
+              </span>
+              <span className="separator">{" | "}</span>
+              <span
+                className={locale === "ar" ? "active" : "toggle"}
+                onClick={() => handleLanguageChange("ar")}
+              >
+                عربي
+              </span>
+            </div>
+
             <NavLink to="/">
               <FaEnvelope className="contact_nav-icon" />
-              <span className="contact_nav-text">Email : demo@gmail.com</span>
+              <span className="contact_nav-text">{messages.header.email}</span>
             </NavLink>
           </div>
         </div>
@@ -69,7 +92,8 @@ const Header = () => {
               <ul className="navbar-nav">
                 <li className="nav-item">
                   <NavLink to="/" className="nav-link" activeClassName="active">
-                    Home <span className="visually-hidden">(current)</span>
+                    {messages.nav.home}
+                    <span className="visually-hidden">(current)</span>
                   </NavLink>
                 </li>
                 <li className="nav-item">
@@ -78,7 +102,7 @@ const Header = () => {
                     className="nav-link"
                     activeClassName="active"
                   >
-                    About
+                    {messages.nav.about}
                   </NavLink>
                 </li>
                 <li className="nav-item">
@@ -87,7 +111,7 @@ const Header = () => {
                     className="nav-link"
                     activeClassName="active"
                   >
-                    Services
+                    {messages.nav.services}
                   </NavLink>
                 </li>
                 <li className="nav-item">
@@ -96,7 +120,7 @@ const Header = () => {
                     className="nav-link"
                     activeClassName="active"
                   >
-                    Contact Us
+                    {messages.nav.contact}
                   </NavLink>
                 </li>
               </ul>

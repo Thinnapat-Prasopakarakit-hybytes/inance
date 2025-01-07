@@ -17,10 +17,10 @@
     border: none;
     height: 50px;
     margin-bottom: 25px;
-    padding-left: 25px;
+    padding: 0 25px;
     background-color: $white;
     outline: none;
-    color: $white;
+    color: $black;
     box-shadow: 0 0 7px 0 rgba($color: $black, $alpha: 0.2);
 
     &::placeholder {

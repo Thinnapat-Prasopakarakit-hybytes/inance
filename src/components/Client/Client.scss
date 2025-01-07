@@ -24,6 +24,11 @@
           width: 100%;
           border-radius: 100%;
         }
+
+        [dir="rtl"] & {
+          margin-right: 0;
+          margin-left: 15px;
+        }
       }
 
       .client_detail {
@@ -33,6 +38,11 @@
         flex: 1;
         padding-right: 25px;
 
+        [dir="rtl"] & {
+          padding-right: 0;
+          padding-left: 25px;
+        }
+
         .client_info {
           h6 {
             margin-bottom: 0;
@@ -41,6 +51,9 @@
           i {
             color: #fbaf5d;
           }
+        }
+        .rtl-quote {
+          transform: scaleX(-1);
         }
       }
     }
@@ -60,6 +73,10 @@
       justify-content: center;
       margin-top: 20px;
 
+      [dir="rtl"] & {
+        flex-direction: row-reverse;
+      }
+
       .owl-prev,
       .owl-next {
         width: 50px;
@@ -72,6 +89,20 @@
         align-items: center;
         justify-content: center;
       }
+
+      [dir="rtl"] & {
+        transform: scaleX(-1);
+      }
+    }
+  }
+}
+
+[dir="rtl"] {
+  .owl-carousel {
+    direction: ltr;
+
+    .owl-item {
+      direction: rtl;
     }
   }
 }

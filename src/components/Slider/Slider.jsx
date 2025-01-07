@@ -2,7 +2,10 @@ import React from "react";
 import "./Slider.scss";
 import { Link } from "react-router-dom";
 import img from "../../assets/images/slider-img.png";
+import { useIntl } from "react-intl";
+
 const Slider = () => {
+  const { messages } = useIntl();
   return (
     <section className="slider_section">
       <div className="container">
@@ -10,17 +13,12 @@ const Slider = () => {
           <div className="col-md-6">
             <div className="detail-box">
               <h1>
-                Repair and <br />
-                Maintenance <br />
-                Services
+                {messages.slider.firstLine} <br />
+                {messages.slider.secondLine} <br />
+                {messages.slider.thirdLine}
               </h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
-                harum voluptatem adipisci. Quos molestiae saepe dicta nobis
-                pariatur, tempora iusto, ad possimus soluta hic praesentium
-                mollitia consequatur beatae, aspernatur culpa.
-              </p>
-              <Link to="/contact"> Contact Us </Link>
+              <p>{messages.slider.description}</p>
+              <Link to="/contact"> {messages.slider.contact} </Link>
             </div>
           </div>
           <div className="col-md-6">

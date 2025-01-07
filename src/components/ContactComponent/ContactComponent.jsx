@@ -1,35 +1,43 @@
 import React from "react";
 import "./ContactComponent.scss";
 import { Map } from "@vis.gl/react-google-maps";
+import { useIntl } from "react-intl";
+
 const ContactComponent = () => {
+  const { messages, locale } = useIntl();
+
   return (
     <section className="contact_section layout_padding">
       <div className="container">
         <div className="heading_container">
-          <h2>Contact Us</h2>
+          <h2>{messages.contact.title}</h2>
         </div>
         <div className="row">
           <div className="col-md-6">
             <form action="">
               <div>
-                <input type="text" placeholder="Name" />
+                <input type="text" placeholder={messages.contact.name} />
               </div>
               <div>
-                <input type="text" placeholder="Phone Number" />
+                <input type="text" placeholder={messages.contact.phone} />
               </div>
               <div>
-                <input type="email" placeholder="Email" />
+                <input type="email" placeholder={messages.contact.email} />
               </div>
               <div>
-                <input type="text" class="message-box" placeholder="Message" />
+                <input
+                  type="text"
+                  className="message-box"
+                  placeholder={messages.contact.message}
+                />
               </div>
               <div className="d-flex">
-                <button>SEND</button>
+                <button>{messages.contact.send}</button>
               </div>
             </form>
           </div>
-          <div class="col-md-6">
-            <div class="map_container">
+          <div className="col-md-6">
+            <div className="map_container">
               <Map
                 defaultZoom={18}
                 defaultCenter={{
@@ -38,7 +46,7 @@ const ContactComponent = () => {
                 }}
                 gestureHandling={"greedy"}
                 disableDefaultUI
-              ></Map>
+              />
             </div>
           </div>
         </div>

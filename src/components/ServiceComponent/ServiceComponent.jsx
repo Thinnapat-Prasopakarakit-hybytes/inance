@@ -4,26 +4,24 @@ import s1 from "../../assets/images/s1.png";
 import s2 from "../../assets/images/s2.png";
 import s3 from "../../assets/images/s3.png";
 import { Link } from "react-router-dom";
-
+import { useIntl } from "react-intl";
 const ServiceComponent = () => {
+  const { messages } = useIntl();
   const services = [
     {
       image: s1,
-      title: "Maintenance",
-      description:
-        "when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal",
+      title: messages.services.maintenance,
+      description: messages.services.description,
     },
     {
       image: s2,
-      title: "Electrical",
-      description:
-        "when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal",
+      title: messages.services.electrical,
+      description: messages.services.description,
     },
     {
       image: s3,
-      title: "Plumbing",
-      description:
-        "when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal",
+      title: messages.services.plumbing,
+      description: messages.services.description,
     },
   ];
 
@@ -31,7 +29,7 @@ const ServiceComponent = () => {
     <section className="service_section layout_padding">
       <div className="container">
         <div className="heading_container heading_center">
-          <h2>Our Services</h2>
+          <h2>{messages.services.title}</h2>
         </div>
         <div className="row">
           {services.map((service, idx) => (
@@ -49,7 +47,7 @@ const ServiceComponent = () => {
           ))}
         </div>
         <div className="btn-box">
-          <Link to="/"> View More </Link>
+          <Link to="/"> {messages.services.viewMore} </Link>
         </div>
       </div>
     </section>

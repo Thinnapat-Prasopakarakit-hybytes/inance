@@ -9,18 +9,20 @@ import {
 import { TfiFacebook, TfiYoutube } from "react-icons/tfi";
 import "./Info.scss";
 import { Link } from "react-router-dom";
-
+import { useIntl } from "react-intl";
 const Info = () => {
+  const { messages } = useIntl();
   const contactItems = [
     {
       icon: <FaMapMarkerAlt />,
-      text: "Lorem Ipsum is simply dummy text",
+      text: messages.info.text,
       link: "/",
     },
     {
       icon: <FaPhoneAlt />,
       text: "+02 1234567890",
       link: "/",
+      keepLtr: true,
     },
     {
       icon: <FaEnvelope />,
@@ -39,7 +41,7 @@ const Info = () => {
   return (
     <section className="info_section">
       <div className="container">
-        <h4>Get In Touch</h4>
+        <h4>{messages.info.getInTouch}</h4>
         <div className="row">
           <div className="col-lg-10 mx-auto">
             <div className="info_items">
@@ -49,7 +51,9 @@ const Info = () => {
                     <Link to={item.link}>
                       <div className="item">
                         <div className="img-box">{item.icon}</div>
-                        <p>{item.text}</p>
+                        <p className={item.keepLtr ? "keep-ltr" : ""}>
+                          {item.text}
+                        </p>
                       </div>
                     </Link>
                   </div>
@@ -60,7 +64,7 @@ const Info = () => {
         </div>
       </div>
       <div className="social-box">
-        <h4>Follow Us</h4>
+        <h4>{messages.info.followUs}</h4>
         <div className="box">
           {socialItems.map((item, idx) => (
             <Link to={item.link} key={idx}>

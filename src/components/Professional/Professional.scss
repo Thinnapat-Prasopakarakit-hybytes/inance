@@ -9,6 +9,10 @@
   }
 
   .img-box {
+    .rtl-img {
+      transform: scaleX(-1);
+    }
+
     img {
       width: 100%;
     }

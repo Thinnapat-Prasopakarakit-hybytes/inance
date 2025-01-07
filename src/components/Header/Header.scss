@@ -162,3 +162,34 @@
     }
   }
 }
+
+.language {
+  margin: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: $white;
+  .active {
+    color: $primary1;
+    color: #9e9d9d;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  .separator {
+    @include tablet {
+      display: none;
+    }
+  }
+
+  .toggle {
+    color: $primary2;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

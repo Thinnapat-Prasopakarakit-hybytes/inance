@@ -2,7 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import professionalImg from "../../assets/images/professional-img.png";
 import "./Professional.scss";
+import { useIntl } from "react-intl";
 const Professional = () => {
+  const { messages, locale } = useIntl();
   return (
     <section
       className="professional_section layout_padding"
@@ -12,22 +14,21 @@ const Professional = () => {
         <div className="row">
           <div className="col-md-6">
             <div className="img-box">
-              <img src={professionalImg} alt="professional-img" />
+              <img
+                src={professionalImg}
+                alt="professional-img"
+                className={locale === "ar" ? "rtl-img" : ""}
+              />
             </div>
           </div>
           <div className="col-md-6">
             <div className="detail-box">
               <h2>
-                We Provide Professional <br />
-                Home Services.
+                {messages.professional.title} <br />
+                {messages.professional.subtitle}
               </h2>
-              <p>
-                randomised words which don't look even slightly believable. If
-                you are going to use a passage of Lorem Ipsum, you need to be
-                sure there isn't anything embarrassing hidden in the middle of
-                text. All randomised words which don't look even slightly
-              </p>
-              <Link to="/"> Read More </Link>
+              <p>{messages.professional.description}</p>
+              <Link to="/"> {messages.professional.readMore} </Link>
             </div>
           </div>
         </div>

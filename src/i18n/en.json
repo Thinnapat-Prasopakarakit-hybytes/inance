@@ -1,0 +1,65 @@
+{
+  "header": {
+    "phone": "Call : +01 123455678990",
+    "email": "Email : demo@gmail.com"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact Us"
+  },
+  "feature": {
+    "repair": "Repair",
+    "improve": "Improve",
+    "maintain": "Maintain"
+  },
+  "slider": {
+    "firstLine": "Repair and",
+    "secondLine": "Maintenance",
+    "thirdLine": "Services",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui harum voluptatem adipisci. Quos molestiae saepe dicta nobis pariatur, tempora iusto, ad possimus soluta hic praesentium mollitia consequatur beatae, aspernatur culpa.",
+    "contact": "Contact Us"
+  },
+  "about": {
+    "title": "About us",
+    "readMore": "Read More",
+    "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
+  },
+  "professional": {
+    "title": "We Provide Professional",
+    "subtitle": "Home Services.",
+    "description": "randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All randomised words which don't look even slightly",
+    "readMore": "Read More"
+  },
+  "services": {
+    "title": "Our Services",
+    "maintenance": "Maintenance",
+    "electrical": "Electrical",
+    "plumbing": "Plumbing",
+    "description": "when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal",
+    "viewMore": "View More"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "name": "Name",
+    "phone": "Phone Number",
+    "email": "Email",
+    "message": "Message",
+    "send": "SEND"
+  },
+  "client": {
+    "title": "What Our Clients Say",
+    "name": "Jorch morik",
+    "testimonial": "chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum"
+  },
+  "info": {
+    "getInTouch": "Get In Touch",
+    "text": "Lorem Ipsum is simply dummy text",
+    "followUs": "Follow Us"
+  },
+  "footer": {
+    "copyright": "All Rights Reserved By",
+    "company": "Free Html Templates"
+  }
+}

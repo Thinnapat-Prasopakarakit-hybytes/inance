@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Client.scss";
 //import ReactDOMServer from "react-dom/server";
 import client1 from "../../assets/images/client-1.jpg";
@@ -7,40 +7,48 @@ import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import { FaQuoteLeft, FaStar } from "react-icons/fa";
+import { useIntl } from "react-intl";
 
 const Client = () => {
+  const { messages, locale } = useIntl();
+  const [key, setKey] = useState(0);
+
+  useEffect(() => {
+    setKey((prevKey) => prevKey + 1);
+  }, [locale]);
+
   const clients = [
     {
       image: client1,
       info: {
-        name: "Jorch morik",
+        name: messages.client.name,
         rating: 5,
       },
-      text: "chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum",
+      text: messages.client.testimonial,
     },
     {
       image: client2,
       info: {
-        name: "Jorch morik",
+        name: messages.client.name,
         rating: 5,
       },
-      text: "chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum",
+      text: messages.client.testimonial,
     },
     {
       image: client1,
       info: {
-        name: "Jorch morik",
+        name: messages.client.name,
         rating: 5,
       },
-      text: "chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum",
+      text: messages.client.testimonial,
     },
     {
       image: client2,
       info: {
-        name: "Jorch morik",
+        name: messages.client.name,
         rating: 5,
       },
-      text: "chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum",
+      text: messages.client.testimonial,
     },
   ];
 
@@ -48,6 +56,7 @@ const Client = () => {
     loop: true,
     margin: 10,
     nav: true,
+    rtl: locale === "ar",
     navText: [
       //React Icons
       // ReactDOMServer.renderToString(<FaLongArrowAltLeft />),
@@ -79,12 +88,12 @@ const Client = () => {
     <section className="client_section">
       <div className="container">
         <div className="heading_container heading_center">
-          <h2>What Our Clients Say</h2>
+          <h2>{messages.client.title}</h2>
         </div>
         <div className="carousel-wrap layout_padding2-top">
-          <OwlCarousel {...options}>
-            {clients.map((client, index) => (
-              <div key={index} className="item">
+          <OwlCarousel key={key} {...options}>
+            {clients.map((client, idx) => (
+              <div key={idx} className="item">
                 <div className="box">
                   <div className="client_id">
                     <div className="img-box">
@@ -99,7 +108,9 @@ const Client = () => {
                           ))}
                         </div>
                       </div>
-                      <FaQuoteLeft />
+                      <FaQuoteLeft
+                        className={locale === "ar" ? "rtl-quote" : ""}
+                      />
                     </div>
                   </div>
                   <div className="client_text">

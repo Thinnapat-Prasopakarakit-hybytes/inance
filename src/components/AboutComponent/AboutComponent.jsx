@@ -2,23 +2,19 @@ import React from "react";
 import "./AboutComponent.scss";
 import { Link } from "react-router-dom";
 import aboutImg from "../../assets/images/about-img.jpg";
+import { useIntl } from "react-intl";
+
 const AboutComponent = ({ layout }) => {
+  const { messages } = useIntl();
   return (
     <section className={`about_section ${layout}`} aria-label="About Section">
       <div className="container">
         <div className="row">
           <div className="col-lg-5 col-md-6">
             <div className="detail-box">
-              <h2>About us</h2>
-              <p>
-                There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form, by
-                injected humour, or randomisedThere are many variations of
-                passages of Lorem Ipsum available, but the majority have
-                suffered alteration in some form, by injected humour, or
-                randomised
-              </p>
-              <Link to="/"> Read More </Link>
+              <h2>{messages.about.title}</h2>
+              <p>{messages.about.description}</p>
+              <Link to="/"> {messages.about.readMore} </Link>
             </div>
           </div>
           <div className="col-lg-7 col-md-6">

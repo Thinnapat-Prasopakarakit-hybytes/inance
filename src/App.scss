@@ -2,3 +2,47 @@
 @use "./styles/partials/variables" as *;
 @use "./styles/partials/mixins" as *;
 @use "./styles/partials/layout" as *;
+
+.app {
+  &.rtl {
+    direction: rtl;
+    text-align: right;
+
+    .navbar-nav {
+      padding-right: 0;
+    }
+
+    .ml-auto {
+      margin-right: auto !important;
+      margin-left: 0 !important;
+    }
+
+    .mr-auto {
+      margin-left: auto !important;
+      margin-right: 0 !important;
+    }
+  }
+}
+
+.language-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}
+
+.keep-ltr {
+  direction: ltr;
+  display: inline-block;
+  unicode-bidi: bidi-override;
+}
