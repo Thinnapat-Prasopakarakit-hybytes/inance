@@ -2,7 +2,6 @@ import React from "react";
 import ContactComponent from "../../components/ContactComponent/ContactComponent";
 import { APIProvider } from "@vis.gl/react-google-maps";
 import { useIntl } from "react-intl";
-
 const Contact = () => {
   const { locale } = useIntl();
   return (

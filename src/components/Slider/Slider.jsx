@@ -5,7 +5,7 @@ import img from "../../assets/images/slider-img.png";
 import { useIntl } from "react-intl";
 
 const Slider = () => {
-  const { messages } = useIntl();
+  const { messages, locale } = useIntl();
   return (
     <section className="slider_section">
       <div className="container">
@@ -18,7 +18,7 @@ const Slider = () => {
                 {messages.slider.thirdLine}
               </h1>
               <p>{messages.slider.description}</p>
-              <Link to="/contact"> {messages.slider.contact} </Link>
+              <Link to={`/${locale}/contact`}> {messages.slider.contact} </Link>
             </div>
           </div>
           <div className="col-md-6">

@@ -2,7 +2,11 @@ import React from "react";
 import ServiceComponent from "../../components/ServiceComponent/ServiceComponent";
 
 const Service = () => {
-  return <ServiceComponent />;
+  return (
+    <>
+      <ServiceComponent />
+    </>
+  );
 };
 
 export default Service;

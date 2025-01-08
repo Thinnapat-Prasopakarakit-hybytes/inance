@@ -5,7 +5,7 @@ import aboutImg from "../../assets/images/about-img.jpg";
 import { useIntl } from "react-intl";
 
 const AboutComponent = ({ layout }) => {
-  const { messages } = useIntl();
+  const { messages, locale } = useIntl();
   return (
     <section className={`about_section ${layout}`} aria-label="About Section">
       <div className="container">
@@ -14,7 +14,7 @@ const AboutComponent = ({ layout }) => {
             <div className="detail-box">
               <h2>{messages.about.title}</h2>
               <p>{messages.about.description}</p>
-              <Link to="/"> {messages.about.readMore} </Link>
+              <Link to={`/${locale}/about`}> {messages.about.readMore} </Link>
             </div>
           </div>
           <div className="col-lg-7 col-md-6">

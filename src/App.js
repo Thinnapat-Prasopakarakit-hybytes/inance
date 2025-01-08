@@ -1,6 +1,12 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter,
+  Navigate,
+  Route,
+  Routes,
+  useParams,
+} from "react-router-dom";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Service from "./pages/Service/Service";
@@ -9,22 +15,60 @@ import { Hero } from "./components/Hero/Hero";
 import Info from "./components/Info/Info";
 import Footer from "./components/Footer/Footer";
 import LanguageProvider from "./i18n/LanguageProvider";
+import NotFound from "./pages/NotFound/NotFound";
 
-function App() {
-  return (
-    <LanguageProvider>
-      <BrowserRouter>
+const LanguageWrapper = () => {
+  const { lang } = useParams();
+  const validLanguages = ["en", "ar"];
+
+  if (!validLanguages.includes(lang)) {
+    return (
+      <LanguageProvider>
         <Hero />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/service" element={<Service />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <NotFound />
         <Info />
         <Footer />
-      </BrowserRouter>
+      </LanguageProvider>
+    );
+  }
+
+  return (
+    <LanguageProvider>
+      <Hero />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/service" element={<Service />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Info />
+      <Footer />
     </LanguageProvider>
+  );
+};
+
+function App() {
+  const localStorageLang = localStorage.getItem("lang");
+
+  return (
+    <div className="app">
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Navigate
+                to={`/${localStorageLang ? localStorageLang : "en"}`}
+                replace
+              />
+            }
+          />
+          <Route path="/:lang/*" element={<LanguageWrapper />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 

@@ -28,7 +28,10 @@ const Professional = () => {
                 {messages.professional.subtitle}
               </h2>
               <p>{messages.professional.description}</p>
-              <Link to="/"> {messages.professional.readMore} </Link>
+              <Link to={`/${locale}/about`}>
+                {" "}
+                {messages.professional.readMore}{" "}
+              </Link>
             </div>
           </div>
         </div>

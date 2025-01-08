@@ -8,7 +8,9 @@ export const Hero = () => {
   return (
     <div className="hero">
       <Header />
-      {location.pathname === "/" && <Slider />}
+      {(location.pathname === "/en" || location.pathname === "/ar") && (
+        <Slider />
+      )}
     </div>
   );
 };

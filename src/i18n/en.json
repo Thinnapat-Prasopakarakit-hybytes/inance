@@ -61,5 +61,10 @@
   "footer": {
     "copyright": "All Rights Reserved By",
     "company": "Free Html Templates"
+  },
+  "notFound": {
+    "text": "Page not found",
+    "description": "Oops! The page you are looking for does not exist",
+    "link": "Back to Home"
   }
 }

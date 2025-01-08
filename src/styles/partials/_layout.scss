@@ -3,6 +3,9 @@
 .container {
   padding-right: 15px !important;
   padding-left: 15px !important;
+  @include lg-breakpoint {
+    max-width: 1170px !important;
+  }
 }
 
 .heading_container {

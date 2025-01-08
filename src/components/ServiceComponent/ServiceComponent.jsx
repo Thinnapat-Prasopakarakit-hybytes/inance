@@ -6,7 +6,7 @@ import s3 from "../../assets/images/s3.png";
 import { Link } from "react-router-dom";
 import { useIntl } from "react-intl";
 const ServiceComponent = () => {
-  const { messages } = useIntl();
+  const { messages, locale } = useIntl();
   const services = [
     {
       image: s1,
@@ -47,7 +47,7 @@ const ServiceComponent = () => {
           ))}
         </div>
         <div className="btn-box">
-          <Link to="/"> {messages.services.viewMore} </Link>
+          <Link to={`/${locale}/about`}> {messages.services.viewMore} </Link>
         </div>
       </div>
     </section>
