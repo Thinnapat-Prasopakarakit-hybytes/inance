@@ -3,6 +3,8 @@ import { IntlProvider } from "react-intl";
 import { useLocation, useParams } from "react-router-dom";
 import en from "./en.json";
 import ar from "./ar.json";
+import { HelmetProvider } from "react-helmet-async";
+import SEO from "../components/SEO";
 
 export const LanguageContext = createContext();
 
@@ -36,15 +38,18 @@ const LanguageProvider = ({ children }) => {
   };
 
   return (
-    <LanguageContext.Provider value={{ locale, handleLanguageChange }}>
-      <IntlProvider
-        messages={messages[locale]}
-        locale={locale}
-        defaultLocale="en"
-      >
-        {children}
-      </IntlProvider>
-    </LanguageContext.Provider>
+    <HelmetProvider>
+      <LanguageContext.Provider value={{ locale, handleLanguageChange }}>
+        <IntlProvider
+          messages={messages[locale]}
+          locale={locale}
+          defaultLocale="en"
+        >
+          <SEO lang={locale} />
+          {children}
+        </IntlProvider>
+      </LanguageContext.Provider>
+    </HelmetProvider>
   );
 };
 

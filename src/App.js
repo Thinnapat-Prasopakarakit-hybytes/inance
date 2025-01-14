@@ -16,6 +16,7 @@ import Info from "./components/Info/Info";
 import Footer from "./components/Footer/Footer";
 import LanguageProvider from "./i18n/LanguageProvider";
 import NotFound from "./pages/NotFound/NotFound";
+import { HelmetProvider } from "react-helmet-async";
 
 const LanguageWrapper = () => {
   const { lang } = useParams();
@@ -52,23 +53,25 @@ function App() {
   const localStorageLang = localStorage.getItem("lang");
 
   return (
-    <div className="app">
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Navigate
-                to={`/${localStorageLang ? localStorageLang : "en"}`}
-                replace
-              />
-            }
-          />
-          <Route path="/:lang/*" element={<LanguageWrapper />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <HelmetProvider>
+      <div className="app">
+        <BrowserRouter>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Navigate
+                  to={`/${localStorageLang ? localStorageLang : "en"}`}
+                  replace
+                />
+              }
+            />
+            <Route path="/:lang/*" element={<LanguageWrapper />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </HelmetProvider>
   );
 }
 
