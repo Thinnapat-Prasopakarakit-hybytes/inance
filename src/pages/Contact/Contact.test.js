@@ -3,6 +3,10 @@ import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import Contact from "./Contact";
 import { APIProvider } from "@vis.gl/react-google-maps";
+import { LanguageContext } from "../../i18n/LanguageProvider";
+import { IntlProvider } from "react-intl";
+import en from "../../i18n/en.json";
+import ar from "../../i18n/ar.json";
 
 jest.mock("@vis.gl/react-google-maps", () => ({
   APIProvider: ({ children }) => (
@@ -20,12 +24,22 @@ jest.mock("@vis.gl/react-google-maps", () => ({
     />
   ),
 }));
-const renderContact = () => {
+
+const messages = {
+  en,
+  ar,
+};
+
+const renderContact = (locale = "en") => {
   return render(
     <BrowserRouter>
-      <APIProvider apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
-        <Contact />
-      </APIProvider>
+      <LanguageContext.Provider value={{ locale }}>
+        <IntlProvider messages={messages[locale]} locale={locale}>
+          <APIProvider apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
+            <Contact />
+          </APIProvider>
+        </IntlProvider>
+      </LanguageContext.Provider>
     </BrowserRouter>
   );
 };

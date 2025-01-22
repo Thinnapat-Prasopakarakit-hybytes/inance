@@ -2,11 +2,24 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import Slider from "./Slider";
 import { BrowserRouter } from "react-router-dom";
+import { LanguageContext } from "../../i18n/LanguageProvider";
+import { IntlProvider } from "react-intl";
+import en from "../../i18n/en.json";
+import ar from "../../i18n/ar.json";
 
-const renderSlider = () => {
+const messages = {
+  en,
+  ar,
+};
+
+const renderSlider = (locale = "en") => {
   return render(
     <BrowserRouter>
-      <Slider />
+      <LanguageContext.Provider value={{ locale }}>
+        <IntlProvider messages={messages[locale]} locale={locale}>
+          <Slider />
+        </IntlProvider>
+      </LanguageContext.Provider>
     </BrowserRouter>
   );
 };
@@ -28,7 +41,7 @@ describe("Slider Component", () => {
     renderSlider();
     const contactLink = screen.getByText(/Contact Us/i);
     expect(contactLink).toBeInTheDocument();
-    expect(contactLink).toHaveAttribute("href", "/contact");
+    expect(contactLink).toHaveAttribute("href", "/en/contact");
   });
 
   it("should render the slider image", () => {

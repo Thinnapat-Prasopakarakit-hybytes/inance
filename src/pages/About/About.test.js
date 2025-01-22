@@ -2,11 +2,24 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import About from "./About";
+import { LanguageContext } from "../../i18n/LanguageProvider";
+import { IntlProvider } from "react-intl";
+import en from "../../i18n/en.json";
+import ar from "../../i18n/ar.json";
 
-const renderAbout = () => {
+const messages = {
+  en,
+  ar,
+};
+
+const renderAbout = (locale = "en") => {
   return render(
     <BrowserRouter>
-      <About />
+      <LanguageContext.Provider value={{ locale }}>
+        <IntlProvider messages={messages[locale]} locale={locale}>
+          <About />
+        </IntlProvider>
+      </LanguageContext.Provider>
     </BrowserRouter>
   );
 };

@@ -1,11 +1,24 @@
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import AboutComponent from "./AboutComponent";
+import { LanguageContext } from "../../i18n/LanguageProvider";
+import { IntlProvider } from "react-intl";
+import en from "../../i18n/en.json";
+import ar from "../../i18n/ar.json";
 
-const renderAboutComponent = () => {
+const messages = {
+  en,
+  ar,
+};
+
+const renderAboutComponent = (locale = "en") => {
   return render(
     <BrowserRouter>
-      <AboutComponent layout="layout_padding" />
+      <LanguageContext.Provider value={{ locale }}>
+        <IntlProvider messages={messages[locale]} locale={locale}>
+          <AboutComponent layout="layout_padding" />
+        </IntlProvider>
+      </LanguageContext.Provider>
     </BrowserRouter>
   );
 };
@@ -34,7 +47,7 @@ describe("AboutComponent", () => {
   it("should renders the 'Read More' link to home page", () => {
     renderAboutComponent();
     const link = screen.getByText("Read More");
-    expect(link).toHaveAttribute("href", "/");
+    expect(link).toHaveAttribute("href", "/en/about");
   });
 
   it("should match snapshot", () => {

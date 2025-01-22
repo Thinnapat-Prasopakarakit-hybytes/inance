@@ -3,11 +3,24 @@ import { render, screen } from "@testing-library/react";
 import Footer from "./Footer";
 import "@testing-library/jest-dom";
 import { BrowserRouter } from "react-router-dom";
+import { LanguageContext } from "../../i18n/LanguageProvider";
+import { IntlProvider } from "react-intl";
+import en from "../../i18n/en.json";
+import ar from "../../i18n/ar.json";
 
-const renderFooter = () => {
+const messages = {
+  en,
+  ar,
+};
+
+const renderFooter = (locale = "en") => {
   return render(
     <BrowserRouter>
-      <Footer />
+      <LanguageContext.Provider value={{ locale }}>
+        <IntlProvider messages={messages[locale]} locale={locale}>
+          <Footer />
+        </IntlProvider>
+      </LanguageContext.Provider>
     </BrowserRouter>
   );
 };
@@ -26,7 +39,7 @@ describe("Footer Component", () => {
 
   it("should render credit link", () => {
     renderFooter();
-    const link = screen.getByText("Free Html Templates");
+    const link = screen.getByRole("link", { name: /Free Html Templates/i });
     expect(link).toBeInTheDocument();
     expect(link).toHaveAttribute("href", "https://html.design/");
   });

@@ -2,11 +2,24 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import Professional from "./Professional";
+import { IntlProvider } from "react-intl";
+import { LanguageContext } from "../../i18n/LanguageProvider";
+import en from "../../i18n/en.json";
+import ar from "../../i18n/ar.json";
 
-const renderProfessionalComponent = () => {
+const messages = {
+  en,
+  ar,
+};
+
+const renderProfessionalComponent = (locale = "en") => {
   return render(
     <BrowserRouter>
-      <Professional />
+      <LanguageContext.Provider value={{ locale }}>
+        <IntlProvider messages={messages[locale]} locale={locale}>
+          <Professional />
+        </IntlProvider>
+      </LanguageContext.Provider>
     </BrowserRouter>
   );
 };
@@ -36,7 +49,7 @@ describe("Professional Component", () => {
     renderProfessionalComponent();
     const link = screen.getByText("Read More");
     expect(link).toBeInTheDocument();
-    expect(link).toHaveAttribute("href", "/");
+    expect(link).toHaveAttribute("href", "/en/about");
   });
 
   it("should match snapshot", () => {

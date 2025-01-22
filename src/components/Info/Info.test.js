@@ -2,11 +2,26 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import Info from "./Info";
 import { BrowserRouter } from "react-router-dom";
+import { IntlProvider } from "react-intl";
+import { LanguageContext } from "../../i18n/LanguageProvider";
+import en from "../../i18n/en.json";
+import ar from "../../i18n/ar.json";
 
-const renderInfo = () => {
+const messages = {
+  en,
+  ar,
+};
+
+const renderInfo = (locale = "en") => {
   return render(
     <BrowserRouter>
-      <Info />
+      <LanguageContext.Provider
+        value={{ locale, handleLanguageChange: jest.fn() }}
+      >
+        <IntlProvider messages={messages[locale]} locale={locale}>
+          <Info />
+        </IntlProvider>
+      </LanguageContext.Provider>
     </BrowserRouter>
   );
 };

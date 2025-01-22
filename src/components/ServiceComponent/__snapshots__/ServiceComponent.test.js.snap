@@ -101,7 +101,7 @@ exports[`ServiceComponent should match the snapshot 1`] = `
         class="btn-box"
       >
         <a
-          href="/"
+          href="/en/about"
         >
            View More 
         </a>

@@ -2,11 +2,24 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import ServiceComponent from "./ServiceComponent";
 import { BrowserRouter } from "react-router-dom";
+import { LanguageContext } from "../../i18n/LanguageProvider";
+import { IntlProvider } from "react-intl";
+import en from "../../i18n/en.json";
+import ar from "../../i18n/ar.json";
 
-const renderServiceComponent = () => {
+const messages = {
+  en,
+  ar,
+};
+
+const renderServiceComponent = (locale = "en") => {
   return render(
     <BrowserRouter>
-      <ServiceComponent />
+      <LanguageContext.Provider value={{ locale }}>
+        <IntlProvider messages={messages[locale]} locale={locale}>
+          <ServiceComponent />
+        </IntlProvider>
+      </LanguageContext.Provider>
     </BrowserRouter>
   );
 };
@@ -47,7 +60,7 @@ describe("ServiceComponent", () => {
     renderServiceComponent();
     const viewMoreLink = screen.getByRole("link", { name: /View More/i });
     expect(viewMoreLink).toBeInTheDocument();
-    expect(viewMoreLink).toHaveAttribute("href", "/");
+    expect(viewMoreLink).toHaveAttribute("href", "/en/about");
   });
 
   it("should match the snapshot", () => {

@@ -39,7 +39,9 @@ exports[`Info Component should match snapshot 1`] = `
                         data-testid="map-marker-icon"
                       />
                     </div>
-                    <p>
+                    <p
+                      class=""
+                    >
                       Lorem Ipsum is simply dummy text
                     </p>
                   </div>
@@ -61,7 +63,9 @@ exports[`Info Component should match snapshot 1`] = `
                         data-testid="phone-icon"
                       />
                     </div>
-                    <p>
+                    <p
+                      class="keep-ltr"
+                    >
                       +02 1234567890
                     </p>
                   </div>
@@ -83,7 +87,9 @@ exports[`Info Component should match snapshot 1`] = `
                         data-testid="envelope-icon"
                       />
                     </div>
-                    <p>
+                    <p
+                      class=""
+                    >
                       demo@gmail.com
                     </p>
                   </div>

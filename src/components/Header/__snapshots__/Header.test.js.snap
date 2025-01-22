@@ -15,23 +15,40 @@ exports[`Header Component should match snapshot 1`] = `
           class="contact_nav"
         >
           <a
-            aria-current="page"
-            class="active"
-            href="/"
+            class=""
+            href="/en/"
           >
             <div
               data-testid="phone-icon"
             />
             <span
-              class="contact_nav-text"
+              class="contact_nav-text keep-ltr"
             >
               Call : +01 123455678990
             </span>
           </a>
+          <div
+            class="language"
+          >
+            <span
+              class="active"
+            >
+              English
+            </span>
+            <span
+              class="separator"
+            >
+               | 
+            </span>
+            <span
+              class="toggle"
+            >
+              عربي
+            </span>
+          </div>
           <a
-            aria-current="page"
-            class="active"
-            href="/"
+            class=""
+            href="/en/"
           >
             <div
               data-testid="envelope-icon"
@@ -55,9 +72,8 @@ exports[`Header Component should match snapshot 1`] = `
           class="navbar navbar-expand-lg custom_nav-container"
         >
           <a
-            aria-current="page"
-            class="navbar-brand active"
-            href="/"
+            class="navbar-brand"
+            href="/en"
           >
             <span>
               Inance
@@ -85,26 +101,18 @@ exports[`Header Component should match snapshot 1`] = `
                 class="nav-item"
               >
                 <a
-                  activeclassname="active"
-                  aria-current="page"
-                  class="nav-link active"
-                  href="/"
+                  class="nav-link"
+                  href="/en"
                 >
-                  Home 
-                  <span
-                    class="visually-hidden"
-                  >
-                    (current)
-                  </span>
+                  Home
                 </a>
               </li>
               <li
                 class="nav-item"
               >
                 <a
-                  activeclassname="active"
                   class="nav-link"
-                  href="/about"
+                  href="/en/about"
                 >
                   About
                 </a>
@@ -113,9 +121,8 @@ exports[`Header Component should match snapshot 1`] = `
                 class="nav-item"
               >
                 <a
-                  activeclassname="active"
                   class="nav-link"
-                  href="/service"
+                  href="/en/service"
                 >
                   Services
                 </a>
@@ -124,9 +131,8 @@ exports[`Header Component should match snapshot 1`] = `
                 class="nav-item"
               >
                 <a
-                  activeclassname="active"
                   class="nav-link"
-                  href="/contact"
+                  href="/en/contact"
                 >
                   Contact Us
                 </a>

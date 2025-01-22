@@ -11,13 +11,13 @@ exports[`Footer Component should match snapshot 1`] = `
       <p>
         © 
         <span>
-          2024
+          2025
         </span>
-         All Rights Reserved By
+         
         <a
           href="https://html.design/"
         >
-          Free Html Templates
+          All Rights Reserved By Free Html Templates
         </a>
       </p>
     </div>
