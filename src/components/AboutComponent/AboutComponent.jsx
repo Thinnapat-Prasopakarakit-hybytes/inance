@@ -3,6 +3,7 @@ import "./AboutComponent.scss";
 import { Link } from "react-router-dom";
 import aboutImg from "../../assets/images/about-img.jpg";
 import { useIntl } from "react-intl";
+import { logButtonClick } from "../../analytics";
 
 const AboutComponent = ({ layout }) => {
   const { messages, locale } = useIntl();
@@ -14,7 +15,12 @@ const AboutComponent = ({ layout }) => {
             <div className="detail-box">
               <h2>{messages.about.title}</h2>
               <p>{messages.about.description}</p>
-              <Link to={`/${locale}/about`}> {messages.about.readMore} </Link>
+              <Link
+                to={`/${locale}`}
+                onClick={() => logButtonClick("Read More", "About Section")}
+              >
+                {messages.about.readMore}
+              </Link>
             </div>
           </div>
           <div className="col-lg-7 col-md-6">

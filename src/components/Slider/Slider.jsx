@@ -3,7 +3,7 @@ import "./Slider.scss";
 import { Link } from "react-router-dom";
 import img from "../../assets/images/slider-img.png";
 import { useIntl } from "react-intl";
-
+import { logButtonClick } from "../../analytics";
 const Slider = () => {
   const { messages, locale } = useIntl();
   return (
@@ -18,7 +18,13 @@ const Slider = () => {
                 {messages.slider.thirdLine}
               </h1>
               <p>{messages.slider.description}</p>
-              <Link to={`/${locale}/contact`}> {messages.slider.contact} </Link>
+              <Link
+                to={`/${locale}/contact`}
+                onClick={() => logButtonClick("Contact Us", "Hero Section")}
+              >
+                {" "}
+                {messages.slider.contact}{" "}
+              </Link>
             </div>
           </div>
           <div className="col-md-6">

@@ -17,7 +17,8 @@ import Footer from "./components/Footer/Footer";
 import LanguageProvider from "./i18n/LanguageProvider";
 import NotFound from "./pages/NotFound/NotFound";
 import { HelmetProvider } from "react-helmet-async";
-
+import { useEffect } from "react";
+import { initGA } from "./analytics";
 const LanguageWrapper = () => {
   const { lang } = useParams();
   const validLanguages = ["en", "ar"];
@@ -51,6 +52,10 @@ const LanguageWrapper = () => {
 
 function App() {
   const localStorageLang = localStorage.getItem("lang");
+
+  useEffect(() => {
+    initGA();
+  }, []);
 
   return (
     <HelmetProvider>

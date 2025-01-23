@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import professionalImg from "../../assets/images/professional-img.png";
 import "./Professional.scss";
 import { useIntl } from "react-intl";
+import { logButtonClick } from "../../analytics";
+
 const Professional = () => {
   const { messages, locale } = useIntl();
   return (
@@ -28,9 +30,13 @@ const Professional = () => {
                 {messages.professional.subtitle}
               </h2>
               <p>{messages.professional.description}</p>
-              <Link to={`/${locale}/about`}>
-                {" "}
-                {messages.professional.readMore}{" "}
+              <Link
+                to={`/${locale}`}
+                onClick={() =>
+                  logButtonClick("Read More", "Professional Section")
+                }
+              >
+                {messages.professional.readMore}
               </Link>
             </div>
           </div>
