@@ -1,5 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Footer Component - Arabic Support should match Arabic snapshot 1`] = `
+<DocumentFragment>
+  <footer
+    class="footer_section"
+  >
+    <div
+      class="container"
+    >
+      <p>
+        © 
+        <span>
+          2025
+        </span>
+         
+        <a
+          href="https://html.design/"
+        >
+          جميع الحقوق محفوظة لـ قوالب HTML المجانية
+        </a>
+      </p>
+    </div>
+  </footer>
+</DocumentFragment>
+`;
+
 exports[`Footer Component should match snapshot 1`] = `
 <DocumentFragment>
   <footer

@@ -125,4 +125,9 @@ describe("Header Component - Arabic", () => {
     fireEvent.click(toggleButton);
     expect(navbarCollapse).not.toHaveClass("show");
   });
+
+  it("should match Arabic snapshot", () => {
+    const { asFragment } = renderHeaderComponent("ar");
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

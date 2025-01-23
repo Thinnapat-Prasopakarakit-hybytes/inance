@@ -49,3 +49,26 @@ describe("Footer Component", () => {
     expect(asFragment()).toMatchSnapshot();
   });
 });
+
+describe("Footer Component - Arabic", () => {
+  it("should render Arabic copyright text", () => {
+    renderFooter("ar");
+    expect(screen.getByText(/جميع الحقوق محفوظة/i)).toBeInTheDocument();
+  });
+
+  it("should render company name in Arabic", () => {
+    renderFooter("ar");
+    expect(screen.getByText(/قوالب HTML المجانية/i)).toBeInTheDocument();
+  });
+
+  it("should maintain link functionality in Arabic", () => {
+    renderFooter("ar");
+    const link = screen.getByRole("link");
+    expect(link).toHaveAttribute("href", "https://html.design/");
+  });
+
+  it("should match Arabic snapshot", () => {
+    const { asFragment } = renderFooter("ar");
+    expect(asFragment()).toMatchSnapshot();
+  });
+});
