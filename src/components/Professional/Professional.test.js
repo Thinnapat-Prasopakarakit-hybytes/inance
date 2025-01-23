@@ -49,7 +49,7 @@ describe("Professional Component", () => {
     renderProfessionalComponent();
     const link = screen.getByText("Read More");
     expect(link).toBeInTheDocument();
-    expect(link).toHaveAttribute("href", "/en/about");
+    expect(link).toHaveAttribute("href", "/en");
   });
 
   it("should match snapshot", () => {

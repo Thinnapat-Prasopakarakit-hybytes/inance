@@ -47,7 +47,7 @@ describe("AboutComponent", () => {
   it("should renders the 'Read More' link to home page", () => {
     renderAboutComponent();
     const link = screen.getByText("Read More");
-    expect(link).toHaveAttribute("href", "/en/about");
+    expect(link).toHaveAttribute("href", "/en");
   });
 
   it("should match snapshot", () => {

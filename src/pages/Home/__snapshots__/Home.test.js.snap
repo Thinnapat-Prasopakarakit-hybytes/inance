@@ -86,9 +86,9 @@ exports[`Home Page should match snapshot 1`] = `
                 There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
               </p>
               <a
-                href="/en/about"
+                href="/en"
               >
-                 Read More 
+                Read More
               </a>
             </div>
           </div>
@@ -145,9 +145,9 @@ exports[`Home Page should match snapshot 1`] = `
                 randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All randomised words which don't look even slightly
               </p>
               <a
-                href="/en/about"
+                href="/en"
               >
-                 Read More 
+                Read More
               </a>
             </div>
           </div>
@@ -545,23 +545,24 @@ exports[`Home Page should match snapshot 1`] = `
             <div
               class="col-md-6"
             >
-              <form
-                action=""
-              >
+              <form>
                 <div>
                   <input
+                    name="name"
                     placeholder="Name"
                     type="text"
                   />
                 </div>
                 <div>
                   <input
+                    name="phone"
                     placeholder="Phone Number"
                     type="text"
                   />
                 </div>
                 <div>
                   <input
+                    name="email"
                     placeholder="Email"
                     type="email"
                   />
@@ -569,6 +570,7 @@ exports[`Home Page should match snapshot 1`] = `
                 <div>
                   <input
                     class="message-box"
+                    name="message"
                     placeholder="Message"
                     type="text"
                   />
@@ -576,7 +578,9 @@ exports[`Home Page should match snapshot 1`] = `
                 <div
                   class="d-flex"
                 >
-                  <button>
+                  <button
+                    type="submit"
+                  >
                     SEND
                   </button>
                 </div>

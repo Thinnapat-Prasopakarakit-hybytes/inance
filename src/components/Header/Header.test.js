@@ -88,3 +88,41 @@ describe("Navigation Toggle Functionality", () => {
     expect(toggleButton).toHaveAttribute("aria-expanded", "false");
   });
 });
+
+describe("Header Component - Arabic", () => {
+  test("renders Arabic navigation items when locale is ar", () => {
+    renderHeaderComponent("ar");
+
+    expect(screen.getByText("الرئيسية")).toBeInTheDocument();
+    expect(screen.getByText("من نحن")).toBeInTheDocument();
+    expect(screen.getByText("خدماتنا")).toBeInTheDocument();
+    expect(screen.getByText("اتصل بنا")).toBeInTheDocument();
+  });
+
+  test("language switcher shows correct active state for Arabic", () => {
+    renderHeaderComponent("ar");
+
+    const arabicToggle = screen.getByText("عربي");
+    const englishToggle = screen.getByText("English");
+
+    expect(arabicToggle).toHaveClass("active");
+    expect(englishToggle).toHaveClass("toggle");
+  });
+
+  test("mobile menu toggle works with Arabic content", () => {
+    renderHeaderComponent("ar");
+
+    const toggleButton = screen.getByRole("button", {
+      "aria-label": "Toggle navigation",
+    });
+    const navbarCollapse = screen.getByTestId("navbar-collapse");
+
+    expect(navbarCollapse).not.toHaveClass("show");
+
+    fireEvent.click(toggleButton);
+    expect(navbarCollapse).toHaveClass("show");
+
+    fireEvent.click(toggleButton);
+    expect(navbarCollapse).not.toHaveClass("show");
+  });
+});
