@@ -5,7 +5,7 @@ import en from "./en.json";
 import ar from "./ar.json";
 import { HelmetProvider } from "react-helmet-async";
 import SEO from "../components/SEO";
-import { logEvent, logLanguageChange } from "../analytics";
+import { logEvent } from "../analytics";
 
 export const LanguageContext = createContext();
 
