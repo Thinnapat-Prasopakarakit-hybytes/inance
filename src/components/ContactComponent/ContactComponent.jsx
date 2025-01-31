@@ -16,6 +16,7 @@ const ContactComponent = () => {
     phone: "",
     email: "",
     message: "",
+    honeypot: "",
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -55,12 +56,29 @@ const ContactComponent = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
+    if (formData.honeypot) {
+      setFormData({
+        name: "",
+        phone: "",
+        email: "",
+        message: "",
+        honeypot: "",
+      });
+      setSubmitStatus({
+        type: "success",
+        message: messages.contact.status.success,
+      });
+      return;
+    }
+
     try {
       ContactSchema.parse(formData);
       setErrors({});
 
+      const { honeypot, ...submissionData } = formData;
+
       await addDoc(collection(db, "contacts"), {
-        ...formData,
+        ...submissionData,
         id: uuidv4(),
         createdAt: new Date().toISOString(),
         language: locale,
@@ -71,6 +89,7 @@ const ContactComponent = () => {
         phone: "",
         email: "",
         message: "",
+        honeypot: "",
       });
       setSubmitStatus({
         type: "success",
@@ -104,6 +123,15 @@ const ContactComponent = () => {
         <div className="row">
           <div className="col-md-6">
             <form onSubmit={handleSubmit}>
+              <div className="honeypot-field">
+                <input
+                  type="text"
+                  name="honeypot"
+                  value={formData.honeypot}
+                  onChange={handleChange}
+                  style={{ display: "none" }}
+                />
+              </div>
               <div>
                 <input
                   type="text"
@@ -144,14 +172,6 @@ const ContactComponent = () => {
                 )}
               </div>
               <div>
-                {/* <input
-                  type="text"
-                  name="message"
-                  className={`message-box ${errors.message ? "error" : ""}`}
-                  placeholder={messages.contact.message}
-                  value={formData.message}
-                  onChange={handleChange}
-                /> */}
                 <textarea
                   type="text"
                   name="message"
