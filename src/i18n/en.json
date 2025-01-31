@@ -46,7 +46,20 @@
     "phone": "Phone Number",
     "email": "Email",
     "message": "Message",
-    "send": "SEND"
+    "send": "SEND",
+    "errors": {
+      "name": "Name must be at least 3 characters",
+      "phone": "Phone must be at least 10 characters",
+      "email": {
+        "required": "This field has to be filled.",
+        "invalid": "Invalid email address"
+      },
+      "message": "Message must be at least 10 characters"
+    },
+    "status": {
+      "success": "Message sent successfully!",
+      "error": "Failed to send message. Please try again later."
+    }
   },
   "client": {
     "title": "What Our Clients Say",

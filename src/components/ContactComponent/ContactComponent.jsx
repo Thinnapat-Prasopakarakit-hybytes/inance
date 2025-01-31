@@ -9,20 +9,6 @@ import { db, analytics } from "../../firebase/config";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-const ContactSchema = z.object({
-  name: z.string().min(3, { message: "Name must be at least 3 characters" }),
-  phone: z
-    .string()
-    .min(10, { message: "Phone must be at least 10 characters" }),
-  email: z
-    .string()
-    .min(1, { message: "This field has to be filled." })
-    .email({ message: "Invalid email address" }),
-  message: z
-    .string()
-    .min(10, { message: "Message must be at least 10 characters" }),
-});
-
 const ContactComponent = () => {
   const { messages, locale } = useIntl();
   const [formData, setFormData] = useState({
@@ -34,6 +20,16 @@ const ContactComponent = () => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+
+  const ContactSchema = z.object({
+    name: z.string().min(3, { message: messages.contact.errors.name }),
+    phone: z.string().min(10, { message: messages.contact.errors.phone }),
+    email: z
+      .string()
+      .min(1, { message: messages.contact.errors.email.required })
+      .email({ message: messages.contact.errors.email.invalid }),
+    message: z.string().min(10, { message: messages.contact.errors.message }),
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -78,7 +74,7 @@ const ContactComponent = () => {
       });
       setSubmitStatus({
         type: "success",
-        message: "Message sent successfully!",
+        message: messages.contact.status.success,
       });
     } catch (error) {
       if (error instanceof z.ZodError) {
@@ -90,7 +86,7 @@ const ContactComponent = () => {
       } else {
         setSubmitStatus({
           type: "error",
-          message: "Failed to send message. Please try again later.",
+          message: messages.contact.status.error,
         });
         console.error("Error submitting form:", error);
       }
