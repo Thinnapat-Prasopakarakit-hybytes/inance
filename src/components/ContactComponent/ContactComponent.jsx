@@ -6,8 +6,11 @@ import { z } from "zod";
 import { collection, addDoc } from "firebase/firestore";
 import { logEvent } from "firebase/analytics";
 import { db, analytics } from "../../firebase/config";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
+
+const RATE_LIMIT_DURATION = 60 * 60 * 1000;
+const MAX_ATTEMPTS = 3;
 
 const ContactComponent = () => {
   const { messages, locale } = useIntl();
@@ -16,11 +19,63 @@ const ContactComponent = () => {
     phone: "",
     email: "",
     message: "",
-    honeypot: "",
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [timeUntilNextAttempt, setTimeUntilNextAttempt] = useState(0);
+
+  useEffect(() => {
+    let timer;
+    if (timeUntilNextAttempt > 0) {
+      timer = setInterval(() => {
+        setTimeUntilNextAttempt((prev) => {
+          const newTime = Math.max(0, prev - 1000);
+          if (newTime <= 0) {
+            clearInterval(timer);
+          }
+          return newTime;
+        });
+      }, 1000);
+    }
+    return () => clearInterval(timer);
+  }, [timeUntilNextAttempt]);
+
+  const checkRateLimit = () => {
+    const now = Date.now();
+    const submissions = JSON.parse(
+      localStorage.getItem("formSubmissions") || "[]"
+    );
+    const recentSubmissions = submissions.filter(
+      (time) => now - time < RATE_LIMIT_DURATION
+    );
+
+    if (recentSubmissions.length >= MAX_ATTEMPTS) {
+      const oldestSubmission = Math.min(...recentSubmissions);
+      const waitTime = Math.max(
+        0,
+        RATE_LIMIT_DURATION - (now - oldestSubmission)
+      );
+      setTimeUntilNextAttempt(waitTime);
+      return false;
+    }
+
+    setTimeUntilNextAttempt(0);
+    return true;
+  };
+
+  const updateRateLimit = () => {
+    const now = Date.now();
+    const submissions = JSON.parse(
+      localStorage.getItem("formSubmissions") || "[]"
+    );
+
+    const recentSubmissions = submissions
+      .filter((time) => now - time < RATE_LIMIT_DURATION)
+      .concat(now);
+
+    localStorage.setItem("formSubmissions", JSON.stringify(recentSubmissions));
+  };
 
   const ContactSchema = z.object({
     name: z.string().min(3, { message: messages.contact.errors.name }),
@@ -46,8 +101,26 @@ const ContactComponent = () => {
     }
   };
 
+  const formatTimeRemaining = (ms) => {
+    if (ms <= 0) return "0m 0s";
+    const minutes = Math.floor(ms / 60000);
+    const seconds = Math.ceil((ms % 60000) / 1000);
+    return `${minutes}m ${seconds}s`;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!checkRateLimit()) {
+      setSubmitStatus({
+        type: "error",
+        message: `Rate limit exceeded. Please wait ${formatTimeRemaining(
+          timeUntilNextAttempt
+        )} before trying again.`,
+      });
+      return;
+    }
+
     logEventGA("Form", "Submit", "Contact Form");
     logEvent(analytics, "submit_form", {
       form_name: "Contact Us",
@@ -56,40 +129,23 @@ const ContactComponent = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    if (formData.honeypot) {
-      setFormData({
-        name: "",
-        phone: "",
-        email: "",
-        message: "",
-        honeypot: "",
-      });
-      setSubmitStatus({
-        type: "success",
-        message: messages.contact.status.success,
-      });
-      return;
-    }
-
     try {
       ContactSchema.parse(formData);
       setErrors({});
 
-      const { honeypot, ...submissionData } = formData;
-
       await addDoc(collection(db, "contacts"), {
-        ...submissionData,
+        ...formData,
         id: uuidv4(),
         createdAt: new Date().toISOString(),
         language: locale,
       });
 
+      updateRateLimit();
       setFormData({
         name: "",
         phone: "",
         email: "",
         message: "",
-        honeypot: "",
       });
       setSubmitStatus({
         type: "success",
@@ -123,15 +179,6 @@ const ContactComponent = () => {
         <div className="row">
           <div className="col-md-6">
             <form onSubmit={handleSubmit}>
-              <div className="honeypot-field">
-                <input
-                  type="text"
-                  name="honeypot"
-                  value={formData.honeypot}
-                  onChange={handleChange}
-                  style={{ display: "none" }}
-                />
-              </div>
               <div>
                 <input
                   type="text"
@@ -185,13 +232,22 @@ const ContactComponent = () => {
                 )}
               </div>
               <div className="d-flex">
-                <button type="submit" disabled={isSubmitting}>
-                  {isSubmitting ? "SENDING..." : messages.contact.send}
+                <button
+                  type="submit"
+                  disabled={isSubmitting || timeUntilNextAttempt > 0}
+                >
+                  {isSubmitting
+                    ? messages.contact.sending
+                    : messages.contact.send}
                 </button>
               </div>
               {submitStatus && (
                 <div className={`submit-status ${submitStatus.type}`}>
-                  {submitStatus.message}
+                  {timeUntilNextAttempt > 0
+                    ? `Rate limit exceeded. Please wait ${formatTimeRemaining(
+                        timeUntilNextAttempt
+                      )} before trying again.`
+                    : submitStatus.message}
                 </div>
               )}
             </form>
